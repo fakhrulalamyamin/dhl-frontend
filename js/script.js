@@ -29,7 +29,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   var n = slides.length,
     i = 0,
     timer = null,
-    DUR = 6000;
+    DUR = 2500;
   var pad = function (k) {
     return ("0" + k).slice(-2);
   };
@@ -146,18 +146,19 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   var grid = document.querySelector(".pkg-grid");
   var cards = [].slice.call(grid.querySelectorAll(".pkg"));
   var idx = 0;
-  var cardWidth = cards[0].getBoundingClientRect().width + 26; // card + gap
 
-  function goTo(i) {
-    idx = (i + cards.length) % cards.length;
-    grid.classList.add("scrolling");
-    grid.scrollLeft = idx * cardWidth;
-    setTimeout(function () {
-      grid.classList.remove("scrolling");
-    }, 300);
+  function cardWidth() {
+    return cards[0].getBoundingClientRect().width + 26;
   }
 
-  // Wire arrow buttons
+  function goTo(i, instant) {
+    idx = (i + cards.length) % cards.length;
+    grid.scrollTo({
+      left: idx * cardWidth(),
+      behavior: instant ? "auto" : "smooth",
+    });
+  }
+
   var arrows = document.querySelectorAll(".arrows .arrow");
   if (arrows[0]) {
     arrows[0].addEventListener("click", function () {
@@ -170,10 +171,8 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     });
   }
 
-  // Recalc on resize
   window.addEventListener("resize", function () {
-    cardWidth = cards[0].getBoundingClientRect().width + 26;
-    goTo(idx);
+    goTo(idx, true);
   });
 })();
 
@@ -185,6 +184,41 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   // Duplicate items for seamless infinite loop
   items.forEach(function (item) {
     track.appendChild(item.cloneNode(true));
+  });
+})();
+
+// ========== YOUTUBE MODAL ==========
+(function () {
+  var modal = document.getElementById("ytModal");
+  var frame = document.getElementById("ytFrame");
+  var closeBtn = document.getElementById("ytClose");
+  var playBtn = document.getElementById("vidPlayBtn");
+  if (!modal || !playBtn) return;
+
+  function openModal() {
+    var videoId = playBtn.dataset.video;
+    frame.src =
+      "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("open");
+    frame.src = "";
+    document.body.style.overflow = "";
+  }
+
+  playBtn.addEventListener("click", openModal);
+  playBtn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") openModal();
+  });
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
   });
 })();
 

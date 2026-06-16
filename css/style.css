@@ -93,7 +93,7 @@ a {
   line-height: 1.02;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: clamp(25px, 4vw, 45px);
 }
 .h-display .alt {
   color: var(--red);
@@ -638,11 +638,12 @@ section {
 .pkg-grid {
   display: flex;
   gap: 26px;
-  overflow: hidden;
-  scroll-behavior: smooth;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.pkg-grid.scrolling {
-  scroll-behavior: auto;
+.pkg-grid::-webkit-scrollbar {
+  display: none;
 }
 .pkg {
   flex: 0 0 calc(33.333% - 17.33px);
@@ -856,15 +857,7 @@ section {
   display: flex;
   justify-content: center;
 }
-.why-img .blob {
-  position: absolute;
-  bottom: 0;
-  width: 78%;
-  height: 88%;
-  background: #f7c9cf;
-  border-radius: 50% 50% 14px 14px;
-  z-index: 0;
-}
+
 .why-img img {
   position: relative;
   z-index: 1;
@@ -1586,6 +1579,10 @@ footer h5 {
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 28px;
+  border: 1px solid #e7e7ea;
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.196);
 }
 .accred b {
   font-size: 18px;
@@ -1731,7 +1728,6 @@ footer .bottom .cr {
   .feat {
     grid-template-columns: 1fr;
   }
-  .pkg-grid,
   .exp-grid,
   .off-grid,
   .t-mini-row {
@@ -1750,4 +1746,56 @@ footer .bottom .cr {
   .feat .txt {
     padding: 32px 26px;
   }
+}
+
+/* ============ YOUTUBE MODAL ============ */
+.yt-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+}
+.yt-modal.open {
+  display: flex;
+}
+.yt-modal-inner {
+  position: relative;
+  width: 90%;
+  max-width: 860px;
+}
+.yt-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.yt-close:hover {
+  opacity: 1;
+}
+.yt-frame-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+.yt-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
