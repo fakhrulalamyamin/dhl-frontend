@@ -69,47 +69,91 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   }
   var dots = [].slice.call(rail.querySelectorAll(".fx-dot"));
 
-  // render the upcoming-slide cards (active slide is the big background, so excluded)
-  function renderCards() {
-    cards.innerHTML = "";
-    for (var k = 1; k < n; k++) {
-      var s = slides[(i + k) % n];
+  // x-positions (px) for each visible card slot within .fx-cards
+  // offset 1 = NEXT (big), offsets 2-4 = smaller cards left to right
+  var SLOT_X = [0, 218, 402, 586];
+  var OFF_L = -240; // hidden off the left edge
+  var OFF_R = 820;  // hidden off the right edge
+
+  // Create all n cards once and keep them in the DOM permanently
+  var cardEls = [];
+  (function () {
+    for (var s = 0; s < n; s++) {
+      var sl = slides[s];
       var card = document.createElement("button");
-      card.className = "fx-card" + (k === 1 ? " next" : "");
-      card.dataset.i = (i + k) % n;
+      card.className = "fx-card";
       card.innerHTML =
         '<div class="lbl">' +
-        s.dataset.label.toUpperCase() +
+        sl.dataset.label.toUpperCase() +
         ' <span class="stars">' +
-        stars(parseInt(s.dataset.stars, 10)) +
+        stars(parseInt(sl.dataset.stars, 10)) +
         "</span></div>" +
         '<div class="pic"><img src="' +
-        s.dataset.card +
+        sl.dataset.card +
         '" alt="' +
-        s.dataset.label +
+        sl.dataset.label +
         '" /></div>';
-      card.addEventListener("click", function () {
-        go(parseInt(this.dataset.i, 10));
-        start();
-      });
+      (function (idx) {
+        card.addEventListener("click", function () { go(idx); start(); });
+      }(s));
       guard(card.querySelector("img"));
       cards.appendChild(card);
+      cardEls.push(card);
+    }
+  }());
+
+  // Snap every card to its correct position with no animation (used on first render)
+  function placeCards() {
+    for (var s = 0; s < n; s++) {
+      var offset = (s - i + n) % n;
+      var x = offset === 0              ? OFF_L
+            : offset - 1 < SLOT_X.length ? SLOT_X[offset - 1]
+            : OFF_R;
+      var c = cardEls[s];
+      c.style.transition = "none";
+      c.style.transform  = "translateY(-50%) translateX(" + x + "px)";
+      if (offset === 1) c.classList.add("next");
+      else              c.classList.remove("next");
     }
   }
 
-  function go(k) {
+  // Slide each card individually to its new slot
+  function slideCards(dir) {
+    // The card that was previously active is now off-screen (at OFF_L or OFF_R).
+    // Snap it to the incoming edge so it slides INTO view (not across the screen).
+    var oldActiveIdx = (i - (dir > 0 ? 1 : -1) + n) % n;
+    var enterFrom    = dir > 0 ? OFF_R : OFF_L;
+    cardEls[oldActiveIdx].style.transition = "none";
+    cardEls[oldActiveIdx].style.transform  = "translateY(-50%) translateX(" + enterFrom + "px)";
+
+    // Force reflow so the no-transition snap commits before animation starts
+    cards.offsetWidth; // eslint-disable-line no-unused-expressions
+
+    // Animate every card to its new position simultaneously
+    for (var s = 0; s < n; s++) {
+      var offset = (s - i + n) % n;
+      var x;
+      if (offset === 0)                           x = dir > 0 ? OFF_L : OFF_R; // newly active → exits in travel direction
+      else if (offset - 1 < SLOT_X.length)        x = SLOT_X[offset - 1];      // visible slots
+      else                                         x = dir > 0 ? OFF_R : OFF_L; // beyond visible → stays off-screen
+
+      cardEls[s].style.transition = ""; // restore CSS transition
+      cardEls[s].style.transform  = "translateY(-50%) translateX(" + x + "px)";
+      if (offset === 1) cardEls[s].classList.add("next");
+      else              cardEls[s].classList.remove("next");
+    }
+  }
+
+  function go(k, instant) {
+    var raw = (k - i + n) % n;
+    var dir = raw > n / 2 ? raw - n : raw; // normalise to -n/2 … n/2
     i = (k + n) % n;
-    slides.forEach(function (s, x) {
-      s.classList.toggle("active", x === i);
-    });
-    conts.forEach(function (c, x) {
-      c.classList.toggle("on", x === i);
-    });
-    dots.forEach(function (dt, x) {
-      dt.classList.toggle("active", x === i);
-    });
+    slides.forEach(function (s, x) { s.classList.toggle("active", x === i); });
+    conts.forEach(function (c, x) { c.classList.toggle("on",     x === i); });
+    dots.forEach(function (dt, x)  { dt.classList.toggle("active", x === i); });
     cur.textContent = pad(i + 1);
-    renderCards();
+    if (instant) placeCards();
+    else         slideCards(dir);
   }
   function start() {
     stop();
@@ -137,7 +181,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     start();
   });
 
-  go(0);
+  go(0, true);
   start();
 })();
 
