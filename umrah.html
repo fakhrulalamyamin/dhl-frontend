@@ -1,0 +1,1518 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ওমরাহ প্যাকেজ — Discover Holidays LTD</title>
+    <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", "Hind Siliguri", system-ui, sans-serif;
+      }
+
+      /* ===== UMRAH HERO ===== */
+      .u-hero {
+        position: relative;
+        min-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: #d8cfc0;
+      }
+      .u-hero-bg {
+        position: absolute;
+        inset: 0;
+      }
+      .u-hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .u-hero-body {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 130px 28px 200px;
+      }
+      .u-hero-copy h1 {
+        font-size: clamp(26px, 4.2vw, 52px);
+        font-weight: 700;
+        line-height: 1.38;
+        color: #140f05;
+        margin-bottom: 14px;
+      }
+      .u-hero-copy p {
+        font-size: 16px;
+        color: #2e2a1e;
+        line-height: 1.75;
+        max-width: 580px;
+        margin: 0 auto 32px;
+      }
+      .u-hero-btns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.82);
+        color: #1a1209;
+        border: 1.5px solid rgba(0, 0, 0, 0.18);
+        padding: 13px 26px;
+        font-size: 15px;
+        font-family: inherit;
+        backdrop-filter: blur(8px);
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+      .btn-ghost:hover {
+        background: #fff;
+      }
+
+      /* Stat bar at hero bottom */
+      .u-stat-bar {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        padding: 0 28px;
+      }
+      .u-stat-bar-inner {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 270px));
+        gap: 18px;
+        width: 100%;
+        max-width: 866px;
+      }
+      .u-sbox {
+        padding: 20px 22px 22px;
+        border-radius: 16px;
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+      }
+      .u-sbox.s-purple {
+        background: #7b3f8c;
+      }
+      .u-sbox.s-navy {
+        background: #20303f;
+      }
+      .u-sbox.s-gold {
+        background: #e0a526;
+      }
+      .u-sbox b {
+        font-size: 25px;
+        font-weight: 700;
+        color: #fff;
+        display: block;
+        line-height: 1.15;
+      }
+      .u-sbox .st-sub {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .u-sbox p {
+        font-size: 11.5px;
+        color: rgba(255, 255, 255, 0.82);
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      /* ===== SECTION HEADING UTIL ===== */
+      .sec-center {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .sec-center .h-display {
+        margin-bottom: 8px;
+      }
+      .sec-center .sec-sub {
+        font-size: 15px;
+        color: var(--muted);
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+        margin-top: 8px;
+      }
+
+      /* ===== FILTER BUTTONS ===== */
+      .pkg-filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 34px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .filter-btn {
+        padding: 10px 22px;
+        border-radius: 999px;
+        border: 1.5px solid #d6d6da;
+        background: #fff;
+        font-family: "Poppins", "Hind Siliguri", sans-serif;
+        font-size: 14.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        color: #2a2a30;
+      }
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--red-bright);
+        color: #fff;
+        border-color: var(--red-bright);
+      }
+
+      /* ===== UMRAH PACKAGE GRID ===== */
+      .u-pkg-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+        margin-bottom: 46px;
+      }
+      .u-pkg-grid .pkg {
+        flex: unset;
+        display: flex;
+        flex-direction: column;
+      }
+      .pkg.u-hidden {
+        display: none !important;
+      }
+
+      /* ===== HAJJ REGISTRATION ===== */
+      .hajj-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 22px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 100%);
+        box-shadow: 0 12px 40px rgba(20, 40, 80, 0.09);
+      }
+      .hajj-img-col {
+        overflow: hidden;
+        min-height: 360px;
+      }
+      .hajj-img-col img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hajj-text-col {
+        padding: 52px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hajj-text-col h2 {
+        font-size: clamp(22px, 2.8vw, 36px);
+        font-weight: 700;
+        line-height: 1.35;
+        color: #1a1a1a;
+        margin-bottom: 16px;
+      }
+      .hajj-text-col p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+      .hajj-text-col .btn-red {
+        align-self: flex-start;
+      }
+
+      /* ===== STEPS ===== */
+      .steps-row {
+        display: grid;
+        grid-template-columns: 1fr 44px 1fr 44px 1fr;
+        align-items: start;
+        margin: 48px 0;
+        gap: 0;
+      }
+      .step-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 34px 26px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(20, 20, 40, 0.08);
+      }
+      .step-badge {
+        display: inline-block;
+        background: var(--red);
+        color: #fff;
+        font-size: 12.5px;
+        font-weight: 700;
+        padding: 5px 18px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+        letter-spacing: 0.03em;
+      }
+      .step-ico {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: #fff5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        color: var(--red);
+      }
+      .step-card h3 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+      }
+      .step-card p {
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.72;
+      }
+      .step-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px;
+        color: var(--red);
+        opacity: 0.45;
+      }
+
+      /* ===== KAABA INFOGRAPHIC ===== */
+      .kaaba-info {
+        background: #fff;
+        padding: 30px 0;
+        text-align: center;
+      }
+      .kaaba-info img {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      /* ===== SERVICES ===== */
+      .srv-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .srv-img {
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .srv-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .srv-body .sec-sub {
+        margin-bottom: 32px;
+        display: block;
+      }
+      .srv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .srv-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .srv-ico {
+        width: 50px;
+        height: 50px;
+        border-radius: 13px;
+        background: #fff5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        color: var(--red);
+      }
+      .srv-item h4 {
+        font-size: 15.5px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #1a1a1a;
+      }
+      .srv-item p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1020px) {
+        .u-stat-bar-inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .u-pkg-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hajj-wrap {
+          grid-template-columns: 1fr;
+        }
+        .hajj-img-col {
+          min-height: 260px;
+        }
+        .hajj-text-col {
+          padding: 36px 32px;
+        }
+        .srv-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        .u-pkg-grid {
+          grid-template-columns: 1fr;
+        }
+        .srv-grid {
+          grid-template-columns: 1fr;
+        }
+        .steps-row {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .step-arrow {
+          padding: 0;
+          transform: rotate(90deg);
+        }
+        .u-stat-bar-inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .u-sbox b {
+          font-size: 20px;
+        }
+        .u-sbox {
+          padding: 16px 14px;
+        }
+      }
+      @media (max-width: 520px) {
+        .u-stat-bar-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/discover-holidays-logo.png"
+            alt="Discover Holidays LTD"
+          />
+        </a>
+        <nav class="menu" id="navmenu">
+          <a href="index.html">Destination</a>
+          <a href="umrah.html" style="color: var(--red)">Umrah</a>
+          <div class="menu-item">
+            <a href="#" class="dd-toggle"
+              >Package
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="dd">
+              <a href="#">All Package</a>
+              <a href="umrah.html">Umrah Package</a>
+              <a href="#">Inbound Package</a>
+              <a href="#">Corporate Group</a>
+            </div>
+          </div>
+          <a href="#">Visa</a>
+          <a href="#">Air Ticket Offer</a>
+          <a href="#">Blog</a>
+          <a href="about-us.html">About Us</a>
+          <a class="btn btn-red menu-cta" href="#plan">Contact Us</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-red" href="#plan">Contact Us</a>
+        </div>
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          onclick="
+            document.body.classList.toggle('menu-open');
+            this.setAttribute(
+              'aria-expanded',
+              document.body.classList.contains('menu-open'),
+            );
+          "
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="u-hero">
+      <div class="u-hero-bg">
+        <img
+          src="uploads/umrah-hero-back.png"
+          alt="পবিত্র মক্কা মুকাররমা"
+          onerror="
+            this.parentNode.style.background =
+              'linear-gradient(160deg,#ddd6c6 0%,#c4b89a 100%)'
+          "
+        />
+      </div>
+      <div class="u-hero-body">
+        <div class="u-hero-copy">
+          <h1>আল্লাহর সন্তুষ্টির উদ্দেশ্যে<br />হজ্জ ও ওমরাহ পালন করুন</h1>
+          <p>
+            প্রতিটি পদক্ষেপে আমরা আপনার পাশে আছি — নির্ভরযোগ্য, অভিজ্ঞ ও
+            পরিচর্যাশীল সেবায় আপনার পবিত্র সফর নিশ্চিত করি।
+          </p>
+          <div class="u-hero-btns">
+            <a href="#packages" class="btn-ghost">প্যাকেজ দেখুন</a>
+            <a href="#plan" class="btn btn-red">হজ্জ রেজিস্ট্রেশন</a>
+          </div>
+        </div>
+      </div>
+      <div class="u-stat-bar">
+        <div class="u-stat-bar-inner">
+          <div class="u-sbox s-purple">
+            <b>১৪ হাজার+</b>
+            <span class="st-sub">সন্তুষ্ট হজযাত্রী</span>
+            <p>
+              আমাদের পেশাদার সেবায় আজ পর্যন্ত ১৪ হাজারেরও বেশি মুসলিম ভাই-বোন
+              সন্তুষ্টচিত্তে হজ ও ওমরাহ পালন করেছেন।
+            </p>
+          </div>
+          <div class="u-sbox s-navy">
+            <b>১২+</b>
+            <span class="st-sub">বছরের অভিজ্ঞতা</span>
+            <p>
+              দীর্ঘ ১২ বছরের অভিজ্ঞতা নিয়ে আমরা প্রতিটি যাত্রীর পাশে আছি
+              নির্ভরযোগ্য ও পরিচর্যাশীল সেবার নিশ্চয়তায়।
+            </p>
+          </div>
+          <div class="u-sbox s-gold">
+            <b>৩০+</b>
+            <span class="st-sub">অভিজ্ঞ গাইড</span>
+            <p>
+              সফল ও দক্ষ ৩০ জনেরও বেশি অভিজ্ঞ গাইড আপনার পবিত্র সফরকে সহজ ও
+              নিরাপদ করে তোলেন।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UMRAH PACKAGES ============ -->
+    <section class="pad bg-gray" id="packages">
+      <div class="wrap">
+        <div class="sec-center">
+          <h2 class="h-display">বিশেষ ওমরাহ প্যাকেজসমূহ</h2>
+          <p class="sec-sub">
+            সাশ্রয়ী ও পরিকল্পিত ওমরাহ প্যাকেজ — আপনার সুবিধামতো বেছে নিন
+          </p>
+        </div>
+        <div class="pkg-filters">
+          <button class="filter-btn active" data-filter="all">সকল</button>
+          <button class="filter-btn" data-filter="7">৭ দিন</button>
+          <button class="filter-btn" data-filter="10">১০ দিন</button>
+          <button class="filter-btn" data-filter="15">১৫ দিন</button>
+          <button class="filter-btn" data-filter="custom">কাস্টমাইজড</button>
+        </div>
+        <div class="u-pkg-grid" id="umrahGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ HAJJ REGISTRATION ============ -->
+    <section class="pad">
+      <div class="wrap">
+        <div class="hajj-wrap">
+          <div class="hajj-img-col">
+            <img
+              src="uploads/hajj-reg-img.png"
+              alt="হজ নিবন্ধন ২০২৭"
+              onerror="
+                this.style.minHeight = '360px';
+                this.style.background = '#dce8f5';
+              "
+            />
+          </div>
+          <div class="hajj-text-col">
+            <h2>২০২৭ সালের হজের<br />নিবন্ধন করুন</h2>
+            <p>
+              সৌদি সরকারের নির্দেশনা অনুযায়ী এখনই আপনার হজ নিবন্ধন সম্পন্ন
+              করুন। প্রতি বছর আসন সীমিত থাকে — দেরি না করে আজই যোগাযোগ করুন এবং
+              আপনার স্বপ্নের হজ যাত্রা নিশ্চিত করুন।
+            </p>
+            <a href="#plan" class="btn btn-red">নিবন্ধন করুন →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UMRAH STEPS ============ -->
+    <section class="pad bg-gray">
+      <div class="wrap">
+        <div class="sec-center">
+          <h2 class="h-display">ওমরাহ পালনের ধাপসমূহ</h2>
+          <p class="sec-sub">
+            এই সহজ ধাপগুলো অনুসরণ করে পরিকল্পনামতো আপনার পবিত্র ওমরাহ পালন করুন
+          </p>
+        </div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-badge">ধাপ ১</div>
+            <div class="step-ico">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>প্রস্তুতি ও ইহরাম</h3>
+            <p>
+              নিজেকে পবিত্র করুন, ইহরামের কাপড় পরিধান করুন এবং মিকাত অতিক্রম
+              করার আগে ওমরাহর নিয়ত (সংকল্প) করুন।
+            </p>
+          </div>
+          <div class="step-arrow">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">ধাপ ২</div>
+            <div class="step-ico">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14,2 14,8 20,8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10,9 9,9 8,9" />
+              </svg>
+            </div>
+            <h3>তাওয়াফ ও সাঈ</h3>
+            <p>
+              কাবা শরীফ সাতবার প্রদক্ষিণ করে তাওয়াফ সম্পন্ন করুন। এরপর সাফা ও
+              মারওয়া পাহাড়ের মাঝে সাতবার হেঁটে সাঈ সম্পন্ন করুন।
+            </p>
+          </div>
+          <div class="step-arrow">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">ধাপ ৩</div>
+            <div class="step-ico">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </div>
+            <h3>মাথা মুণ্ডন বা চুল ছোট করা</h3>
+            <p>
+              পুরুষরা মাথা মুণ্ডন করুন (হলক) বা চুল ছোট করুন (তাকসির)। নারীরা
+              তাদের চুলের সামান্য অংশ কেটে নিন।
+            </p>
+          </div>
+        </div>
+        <div class="center-btn">
+          <a class="btn btn-red" href="#plan">আরও বিস্তারিত জানুন</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KAABA INFOGRAPHIC ============ -->
+    <section class="kaaba-info">
+      <img src="uploads/kaaba-large.png" alt="পবিত্র কাবার পরিচিতি" />
+    </section>
+
+    <!-- ============ OUR SERVICES ============ -->
+    <section class="pad">
+      <div class="wrap srv-layout">
+        <div class="srv-img">
+          <!-- Replace with your image -->
+          <img src="uploads/kaaba.png" alt="ডিসকভার হলিডেজ সেবা" />
+        </div>
+        <div class="srv-body">
+          <h2 class="h-display">আমাদের সেবাসমূহ</h2>
+          <span class="sec-sub"
+            >সর্বোচ্চ মানের সেবায় আপনার ওমরাহ সফর নিশ্চিত করতে আমরা সর্বদা
+            প্রস্তুত</span
+          >
+          <div class="srv-grid">
+            <div class="srv-item">
+              <div class="srv-ico">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.13-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>বিমান টিকিটিং</h4>
+                <p>
+                  নিরাপদ ও সাশ্রয়ী বিমান টিকিটিং সেবা সরাসরি আপনার দোরগোড়ায়।
+                </p>
+              </div>
+            </div>
+            <div class="srv-item">
+              <div class="srv-ico">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9,22 9,12 15,12 15,22" />
+                </svg>
+              </div>
+              <div>
+                <h4>হোটেল বুকিং</h4>
+                <p>
+                  মক্কা ও মদিনার সেরা হোটেলে আরামদায়ক থাকার সম্পূর্ণ ব্যবস্থা।
+                </p>
+              </div>
+            </div>
+            <div class="srv-item">
+              <div class="srv-ico">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <div>
+                <h4>ভিসা ও বীমা সেবা</h4>
+                <p>
+                  দ্রুত ও নির্ভরযোগ্য ভিসা প্রসেসিং এবং ট্রাভেল বীমা সেবা
+                  প্রদান।
+                </p>
+              </div>
+            </div>
+            <div class="srv-item">
+              <div class="srv-ico">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="1" y="3" width="15" height="13" rx="1" />
+                  <polygon points="16,8 20,8 23,11 23,16 16,16 16,8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <div>
+                <h4>গ্রাউন্ড সার্ভিস</h4>
+                <p>
+                  সৌদি আরবে সকল গ্রাউন্ড ট্রান্সপোর্টেশন ও অভিজ্ঞ গাইড সুবিধা।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OFFERS ============ -->
+    <section class="pad bg-gray">
+      <div class="wrap">
+        <h3 class="off-head">Exclusive Offers Just for You!</h3>
+        <div class="off-grid">
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
+            <div class="overlay">
+              <p>
+                Get exclusive discounts on airfares for students. Book your next
+                adventure with special rates.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap">
+              <small class="red" style="color: #ffd23f">Eid Special</small
+              ><b>SEAGULL</b><small>Hotel Cox's Bazar</small>
+            </div>
+            <div class="overlay">
+              <p>
+                Celebrate Eid with our special hotel packages at Seagull, Cox's
+                Bazar. Limited time offer available now.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap">
+              <small>Travel this Eid at</small
+              ><b class="red" style="color: #ffd23f">lower cost</b
+              ><b style="font-size: 18px">Air Ticket</b>
+            </div>
+            <div class="overlay">
+              <p>
+                Travel this Eid at the lowest possible cost. Book your air
+                tickets now and save big on your journey.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN / CONTACT ============ -->
+    <section class="pad" id="plan">
+      <div class="wrap">
+        <div class="plan-top">
+          <div>
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="h-display">
+              Let's plan your<span class="alt">next departure</span>
+            </h2>
+          </div>
+          <p>
+            Have questions about our packages or want to customize your own
+            tour? Our travel experts are here to help you craft the perfect
+            itinerary.
+          </p>
+        </div>
+        <div class="plan-grid">
+          <div>
+            <div class="info-card">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                    />
+                  </svg>
+                </div>
+                <b>Call Us</b>
+              </div>
+              <div class="info-grid">
+                <div class="it">
+                  <b>Air Ticketing</b><span>01730-716617</span>
+                </div>
+                <div class="it">
+                  <b>Visa Services</b><span>01730-716619</span>
+                </div>
+                <div class="it">
+                  <b>Tour Packages</b><span>01977-242404</span>
+                </div>
+                <div class="it">
+                  <b>Umrah Services</b><span>01329-680390</span>
+                </div>
+              </div>
+            </div>
+            <div class="info-card mail">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                </div>
+                <b>Email Us</b>
+              </div>
+              <a
+                href="/cdn-cgi/l/email-protection#cbafa2b8a8a4bdaeb9a3a4a7a2afaab2b8a7bfaf8baca6aaa2a7e5a8a4a6"
+                ><span
+                  class="__cf_email__"
+                  data-cfemail="e3878a90808c9586918b8c8f8a87829a908f9787a3848e828a8fcd808c8e"
+                  >[email&#160;protected]</span
+                ></a
+              >
+              <small>We usually reply within 24 hours</small>
+            </div>
+            <div class="info-card addr">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                    />
+                  </svg>
+                </div>
+                <b>Visit at Office</b>
+              </div>
+              <p class="name">
+                <b>Discover Holidays LTD</b> — Siddique Tower, Level 5<br />49
+                Bir Uttam A.K. Khandakar Road<br />Mohakhali C/A, Dhaka-1212,
+                Bangladesh
+              </p>
+            </div>
+          </div>
+          <div class="form-card">
+            <h3>Request a Free Quote</h3>
+            <div class="sub">
+              For quick help, include your name, service, and travel date.
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Full name</label
+                ><input type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label>Phone</label
+                ><input type="text" placeholder="WhatsApp Number" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 18px">
+              <label>Email</label
+              ><input type="email" placeholder="Your Email" />
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Service</label>
+                <select>
+                  <option>Umrah Package</option>
+                  <option>Hajj Registration</option>
+                  <option>Air Ticketing</option>
+                  <option>Visa Services</option>
+                  <option>Corporate Tour</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Travel Date</label>
+                <input
+                  type="text"
+                  placeholder="DD/MM/YYYY"
+                  onfocus="this.type = 'date'"
+                  onblur="if (!this.value) this.type = 'text';"
+                />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 8px">
+              <label>Message</label
+              ><textarea
+                placeholder="Group size, preferred package, any questions…"
+              ></textarea>
+            </div>
+            <button class="btn btn-red">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="top">
+        <img
+          class="cloud"
+          style="left: 4%; top: 18%; width: 120px"
+          src="uploads/cloud1.png"
+          alt=""
+        />
+        <img
+          class="cloud"
+          style="right: 5%; bottom: 30%; width: 150px"
+          src="uploads/cloud2.png"
+          alt=""
+        />
+        <div class="wrap f-grid">
+          <div class="f-brand">
+            <div class="logo">
+              <img
+                src="assets/discover-holidays-logo.png"
+                alt="Discover Holidays LTD"
+                style="height: 50px"
+              />
+            </div>
+            <p>
+              Your Dhaka-based partner for group &amp; corporate tours, air
+              ticketing, visa processing and Umrah — trusted by 25,000+
+              travelers across 100+ destinations.
+            </p>
+            <div class="socials">
+              <a href="#" aria-label="Facebook"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H18V.2C17.6.1 16.4 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="WhatsApp"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.3-5-4.5-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="f-services">
+            <h5>Services</h5>
+            <div class="f-links">
+              <a href="#">Tour Packages</a>
+              <a href="#">Air Ticketing</a>
+              <a href="#">Visa Services</a>
+              <a href="umrah.html">Umrah Packages</a>
+              <a href="#">Corporate Tours</a>
+            </div>
+          </div>
+          <div class="f-office">
+            <h5>Visit our office</h5>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+              <span
+                >Discover Holidays LTD — Siddique Tower, Level 5, 9 Bir Uttam
+                A.K. Khandakar Road, Mohakhali C/A, Dhaka-1212, Bangladesh</span
+              >
+            </div>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                />
+              </svg>
+              <span
+                >01730-716617<br /><a
+                  href="/cdn-cgi/l/email-protection#d3b7baa0b0bca5b6a1bbbcbfbab7b2aaa0bfa7b793b4beb2babffdb0bcbe"
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="c1a5a8b2a2aeb7a4b3a9aeada8a5a0b8b2adb5a581a6aca0a8adefa2aeac"
+                    >[email&#160;protected]</span
+                  ></a
+                ></span
+              >
+            </div>
+            <div class="accred" style="margin-top: 16px">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 20px;
+                  align-items: center;
+                "
+              >
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Accredited Member
+                  </div>
+                  <img
+                    src="uploads/accredation-01.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Civil Authority
+                  </div>
+                  <img
+                    src="uploads/accredation-03.png"
+                    alt="CAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    International
+                  </div>
+                  <img
+                    src="uploads/accredation-04.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Member Association
+                  </div>
+                  <img
+                    src="uploads/accredation1-01.png"
+                    alt="ATAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="wrap">
+          <div class="cr">
+            © 2026 | Discover Holidays LTD | All Rights Reserved
+          </div>
+          <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ YOUTUBE MODAL ============ -->
+    <div
+      class="yt-modal"
+      id="ytModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video"
+    >
+      <div class="yt-modal-inner">
+        <button class="yt-close" id="ytClose" aria-label="Close video">
+          &times;
+        </button>
+        <div class="yt-frame-wrap">
+          <iframe
+            id="ytFrame"
+            src=""
+            title="Video"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script>
+      // ===== NAV =====
+      document
+        .querySelectorAll("#navmenu a:not(.dd-toggle)")
+        .forEach(function (a) {
+          a.addEventListener("click", function () {
+            document.body.classList.remove("menu-open");
+            var h = document.querySelector(".hamburger");
+            if (h) h.setAttribute("aria-expanded", "false");
+          });
+        });
+      document.querySelectorAll(".dd-toggle").forEach(function (t) {
+        t.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (window.matchMedia("(max-width:980px)").matches) {
+            t.closest(".menu-item").classList.toggle("open");
+          }
+        });
+      });
+
+      // ===== PACKAGE CARDS =====
+      var packages = [
+        {
+          dur: "7",
+          badge: "Best Seller",
+          title: "Umrah After Hajj, 2026",
+          loc: "মক্কা মুকাররমা",
+          days: "৭ দিন · ৬ রাত",
+          pax: "২–৩০ জন",
+          hotel: "৪★ হোটেল",
+          rating: "4.8",
+          reviews: "214",
+          old: "৳১,২০,০০০",
+          now: "৯৯,০০০",
+          img: "assets/images/umrah.jpeg",
+        },
+        {
+          dur: "10",
+          badge: "Group Favourite",
+          title: "Short Umrah Package, July 2026",
+          loc: "মক্কা ও মদিনা",
+          days: "১০ দিন · ৯ রাত",
+          pax: "২–৪০ জন",
+          hotel: "৫★ হোটেল",
+          rating: "4.9",
+          reviews: "318",
+          old: "৳১,৪০,০০০",
+          now: "১,১২,০০০",
+          img: "uploads/hajj-reg-img.png",
+        },
+        {
+          dur: "15",
+          badge: "Best Seller",
+          title: "Umrah After Hajj, 2026",
+          loc: "মক্কা ও মদিনা",
+          days: "১৫ দিন · ১৪ রাত",
+          pax: "২–৫০ জন",
+          hotel: "৫★ হোটেল",
+          rating: "4.9",
+          reviews: "196",
+          old: "৳১,৮০,০০০",
+          now: "১,৪৯,০০০",
+          img: "assets/images/umrah.jpeg",
+        },
+        {
+          dur: "7",
+          badge: "Best Seller",
+          title: "Umrah After Hajj, 2026",
+          loc: "মক্কা মুকাররমা",
+          days: "৭ দিন · ৬ রাত",
+          pax: "২–৩০ জন",
+          hotel: "৪★ হোটেল",
+          rating: "4.8",
+          reviews: "178",
+          old: "৳১,২০,০০০",
+          now: "৯৯,০০০",
+          img: "uploads/hajj-reg-img.png",
+        },
+        {
+          dur: "10",
+          badge: "Group Favourite",
+          title: "Short Umrah Package, July 2026",
+          loc: "মক্কা ও মদিনা",
+          days: "১০ দিন · ৯ রাত",
+          pax: "২–৪০ জন",
+          hotel: "৫★ হোটেল",
+          rating: "4.9",
+          reviews: "256",
+          old: "৳১,৪০,০০০",
+          now: "১,১২,০০০",
+          img: "assets/images/umrah.jpeg",
+        },
+        {
+          dur: "custom",
+          badge: "Customized",
+          title: "Umrah After Hajj, 2026",
+          loc: "মক্কা ও মদিনা",
+          days: "১৫ দিন · ১৪ রাত",
+          pax: "২–৬০ জন",
+          hotel: "৫★ হোটেল",
+          rating: "4.9",
+          reviews: "142",
+          old: "৳১,৮০,০০০",
+          now: "১,৪৯,০০০",
+          img: "uploads/hajj-reg-img.png",
+        },
+      ];
+
+      var heartSVG =
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>';
+      var pinSVG =
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+      var clkSVG =
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+      var paxSVG =
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3.5-5 7-5s7 2 7 5"/><circle cx="17" cy="8" r="2.5"/></svg>';
+      var bedSVG =
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"/></svg>';
+      var arrSVG =
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+      function buildCard(p) {
+        return (
+          '<article class="pkg" data-dur="' +
+          p.dur +
+          '">' +
+          '<div class="top"><img src="' +
+          p.img +
+          '" alt="' +
+          p.title +
+          "\" onerror=\"this.parentNode.className='top ph';this.parentNode.dataset.l='" +
+          p.title +
+          "'\" />" +
+          '<span class="tag">' +
+          p.badge +
+          '</span><span class="fav">' +
+          heartSVG +
+          "</span></div>" +
+          '<div class="body">' +
+          '<div class="loc">' +
+          pinSVG +
+          p.loc +
+          "</div>" +
+          "<h3>" +
+          p.title +
+          "</h3>" +
+          '<div class="meta"><span>' +
+          clkSVG +
+          p.days +
+          "</span><span>" +
+          paxSVG +
+          p.pax +
+          "</span><span>" +
+          bedSVG +
+          p.hotel +
+          "</span></div>" +
+          '<div class="rate"><span class="star">★</span><b>' +
+          p.rating +
+          "</b> (" +
+          p.reviews +
+          " reviews)</div>" +
+          '<div class="sep"></div>' +
+          '<div class="foot"><div class="price"><s>' +
+          p.old +
+          '</s> from<div class="now"><span class="tk">৳</span>' +
+          p.now +
+          "</div></div>" +
+          '<a class="vp" href="#">View package ' +
+          arrSVG +
+          "</a></div>" +
+          "</div></article>"
+        );
+      }
+
+      var grid = document.getElementById("umrahGrid");
+      grid.innerHTML = packages.map(buildCard).join("");
+
+      // ===== FILTER =====
+      document.querySelectorAll(".filter-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".filter-btn").forEach(function (b) {
+            b.classList.remove("active");
+          });
+          btn.classList.add("active");
+          var f = btn.dataset.filter;
+          grid.querySelectorAll(".pkg").forEach(function (card) {
+            if (f === "all" || card.dataset.dur === f) {
+              card.classList.remove("u-hidden");
+            } else {
+              card.classList.add("u-hidden");
+            }
+          });
+        });
+      });
+
+      // ===== YT MODAL =====
+      var modal = document.getElementById("ytModal");
+      var frame = document.getElementById("ytFrame");
+      document.getElementById("ytClose").addEventListener("click", function () {
+        modal.classList.remove("open");
+        frame.src = "";
+        document.body.style.overflow = "";
+      });
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("open");
+          frame.src = "";
+          document.body.style.overflow = "";
+        }
+      });
+    </script>
+  </body>
+</html>
