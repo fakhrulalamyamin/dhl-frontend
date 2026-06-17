@@ -73,7 +73,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   // offset 1 = NEXT (big), offsets 2-4 = smaller cards left to right
   var SLOT_X = [0, 218, 402, 586];
   var OFF_L = -240; // hidden off the left edge
-  var OFF_R = 820;  // hidden off the right edge
+  var OFF_R = 820; // hidden off the right edge
 
   // Create all n cards once and keep them in the DOM permanently
   var cardEls = [];
@@ -94,26 +94,32 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
         sl.dataset.label +
         '" /></div>';
       (function (idx) {
-        card.addEventListener("click", function () { go(idx); start(); });
-      }(s));
+        card.addEventListener("click", function () {
+          go(idx);
+          start();
+        });
+      })(s);
       guard(card.querySelector("img"));
       cards.appendChild(card);
       cardEls.push(card);
     }
-  }());
+  })();
 
   // Snap every card to its correct position with no animation (used on first render)
   function placeCards() {
     for (var s = 0; s < n; s++) {
       var offset = (s - i + n) % n;
-      var x = offset === 0              ? OFF_L
-            : offset - 1 < SLOT_X.length ? SLOT_X[offset - 1]
+      var x =
+        offset === 0
+          ? OFF_L
+          : offset - 1 < SLOT_X.length
+            ? SLOT_X[offset - 1]
             : OFF_R;
       var c = cardEls[s];
       c.style.transition = "none";
-      c.style.transform  = "translateY(-50%) translateX(" + x + "px)";
+      c.style.transform = "translateY(-50%) translateX(" + x + "px)";
       if (offset === 1) c.classList.add("next");
-      else              c.classList.remove("next");
+      else c.classList.remove("next");
     }
   }
 
@@ -122,9 +128,10 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     // The card that was previously active is now off-screen (at OFF_L or OFF_R).
     // Snap it to the incoming edge so it slides INTO view (not across the screen).
     var oldActiveIdx = (i - (dir > 0 ? 1 : -1) + n) % n;
-    var enterFrom    = dir > 0 ? OFF_R : OFF_L;
+    var enterFrom = dir > 0 ? OFF_R : OFF_L;
     cardEls[oldActiveIdx].style.transition = "none";
-    cardEls[oldActiveIdx].style.transform  = "translateY(-50%) translateX(" + enterFrom + "px)";
+    cardEls[oldActiveIdx].style.transform =
+      "translateY(-50%) translateX(" + enterFrom + "px)";
 
     // Force reflow so the no-transition snap commits before animation starts
     cards.offsetWidth; // eslint-disable-line no-unused-expressions
@@ -133,14 +140,16 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     for (var s = 0; s < n; s++) {
       var offset = (s - i + n) % n;
       var x;
-      if (offset === 0)                           x = dir > 0 ? OFF_L : OFF_R; // newly active → exits in travel direction
-      else if (offset - 1 < SLOT_X.length)        x = SLOT_X[offset - 1];      // visible slots
-      else                                         x = dir > 0 ? OFF_R : OFF_L; // beyond visible → stays off-screen
+      if (offset === 0)
+        x = dir > 0 ? OFF_L : OFF_R; // newly active → exits in travel direction
+      else if (offset - 1 < SLOT_X.length)
+        x = SLOT_X[offset - 1]; // visible slots
+      else x = dir > 0 ? OFF_R : OFF_L; // beyond visible → stays off-screen
 
       cardEls[s].style.transition = ""; // restore CSS transition
-      cardEls[s].style.transform  = "translateY(-50%) translateX(" + x + "px)";
+      cardEls[s].style.transform = "translateY(-50%) translateX(" + x + "px)";
       if (offset === 1) cardEls[s].classList.add("next");
-      else              cardEls[s].classList.remove("next");
+      else cardEls[s].classList.remove("next");
     }
   }
 
@@ -148,12 +157,18 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     var raw = (k - i + n) % n;
     var dir = raw > n / 2 ? raw - n : raw; // normalise to -n/2 … n/2
     i = (k + n) % n;
-    slides.forEach(function (s, x) { s.classList.toggle("active", x === i); });
-    conts.forEach(function (c, x) { c.classList.toggle("on",     x === i); });
-    dots.forEach(function (dt, x)  { dt.classList.toggle("active", x === i); });
+    slides.forEach(function (s, x) {
+      s.classList.toggle("active", x === i);
+    });
+    conts.forEach(function (c, x) {
+      c.classList.toggle("on", x === i);
+    });
+    dots.forEach(function (dt, x) {
+      dt.classList.toggle("active", x === i);
+    });
     cur.textContent = pad(i + 1);
     if (instant) placeCards();
-    else         slideCards(dir);
+    else slideCards(dir);
   }
   function start() {
     stop();
@@ -188,6 +203,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
 // ========== PACKAGES SLIDER ==========
 (function () {
   var grid = document.querySelector(".pkg-grid");
+  if (!grid) return;
   var cards = [].slice.call(grid.querySelectorAll(".pkg"));
   var idx = 0;
 
@@ -223,6 +239,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
 // ========== LOGOS CAROUSEL (INFINITE SCROLL) ==========
 (function () {
   var track = document.getElementById("logoTrack");
+  if (!track) return;
   var items = [].slice.call(track.querySelectorAll(".logo-item"));
 
   // Duplicate items for seamless infinite loop
@@ -237,7 +254,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   var frame = document.getElementById("ytFrame");
   var closeBtn = document.getElementById("ytClose");
   var playBtn = document.getElementById("vidPlayBtn");
-  if (!modal || !playBtn) return;
+  if (!modal) return;
 
   function openModal() {
     var videoId = playBtn.dataset.video;
@@ -253,11 +270,13 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     document.body.style.overflow = "";
   }
 
-  playBtn.addEventListener("click", openModal);
-  playBtn.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" || e.key === " ") openModal();
-  });
-  closeBtn.addEventListener("click", closeModal);
+  if (playBtn) {
+    playBtn.addEventListener("click", openModal);
+    playBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") openModal();
+    });
+  }
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", function (e) {
     if (e.target === modal) closeModal();
   });
@@ -306,6 +325,7 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   var mainTxt = document.getElementById("featMain");
   var prevBtn = document.getElementById("featPrev");
   var nextBtn = document.getElementById("featNext");
+  if (!mainTxt || !prevBtn || !nextBtn) return;
 
   function updateTestimonial(i) {
     idx = (i + testimonials.length) % testimonials.length;
@@ -338,4 +358,318 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   nextBtn.addEventListener("click", function () {
     updateTestimonial(idx + 1);
   });
+})();
+
+// ========== MOBILE MENU (hamburger toggle) ==========
+(function () {
+  document.querySelectorAll(".hamburger").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.body.classList.toggle("menu-open");
+      btn.setAttribute(
+        "aria-expanded",
+        document.body.classList.contains("menu-open"),
+      );
+    });
+  });
+})();
+
+// ========== DATE INPUTS (text → native date picker on focus) ==========
+(function () {
+  document.querySelectorAll(".js-date").forEach(function (inp) {
+    inp.addEventListener("focus", function () {
+      inp.type = "date";
+    });
+    inp.addEventListener("blur", function () {
+      if (!inp.value) inp.type = "text";
+    });
+  });
+})();
+
+// ========== IMAGE PLACEHOLDER FALLBACK ==========
+// Markup hooks (replace old inline onerror handlers):
+//   data-ph="Label"   -> on load failure, parent gets .ph + data-l="Label"
+//   data-ph-bg="..."  -> on load failure, parent background is set to the value
+(function () {
+  function applyPh(img) {
+    if (img.dataset.phDone) return;
+    img.dataset.phDone = "1";
+    var p = img.parentNode;
+    if (img.dataset.phBg !== undefined) {
+      if (p) p.style.background = img.dataset.phBg;
+      img.style.display = "none";
+      return;
+    }
+    if (p) {
+      p.classList.add("ph");
+      if (img.dataset.ph) p.dataset.l = img.dataset.ph;
+    }
+    img.style.display = "none";
+  }
+  // Catch errors that fire after this script runs (error doesn't bubble → capture)
+  document.addEventListener(
+    "error",
+    function (e) {
+      var t = e.target;
+      if (t && t.tagName === "IMG") {
+        if (t.hasAttribute("data-hide-on-error")) {
+          t.style.display = "none";
+        } else if (t.dataset.ph !== undefined || t.dataset.phBg !== undefined) {
+          applyPh(t);
+        }
+      }
+    },
+    true,
+  );
+  // Catch images that already failed before this script ran
+  function scan() {
+    document
+      .querySelectorAll("img[data-ph], img[data-ph-bg]")
+      .forEach(function (img) {
+        if (img.complete && img.naturalWidth === 0) applyPh(img);
+      });
+    document
+      .querySelectorAll("img[data-hide-on-error]")
+      .forEach(function (img) {
+        if (img.complete && img.naturalWidth === 0) img.style.display = "none";
+      });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scan);
+  } else {
+    scan();
+  }
+})();
+
+// ========== UMRAH PAGE — package cards + duration filter ==========
+(function () {
+  var grid = document.getElementById("umrahGrid");
+  if (!grid) return;
+
+  var packages = [
+    {
+      dur: "7",
+      badge: "Best Seller",
+      title: "Umrah After Hajj, 2026",
+      loc: "মক্কা মুকাররমা",
+      days: "৭ দিন · ৬ রাত",
+      pax: "২–৩০ জন",
+      hotel: "৪★ হোটেল",
+      rating: "4.8",
+      reviews: "214",
+      old: "৳১,২০,০০০",
+      now: "১,৪৫,০০০",
+      img: "assets/images/umrah.jpeg",
+    },
+    {
+      dur: "10",
+      badge: "Group Favourite",
+      title: "Short Umrah Package, July 2026",
+      loc: "মক্কা ও মদিনা",
+      days: "১০ দিন · ৯ রাত",
+      pax: "২–৪০ জন",
+      hotel: "৫★ হোটেল",
+      rating: "4.9",
+      reviews: "318",
+      old: "৳১,৪০,০০০",
+      now: "১,১২,০০০",
+      img: "uploads/hajj-reg-img.png",
+    },
+    {
+      dur: "15",
+      badge: "Best Seller",
+      title: "Umrah After Hajj, 2026",
+      loc: "মক্কা ও মদিনা",
+      days: "১৫ দিন · ১৪ রাত",
+      pax: "২–৫০ জন",
+      hotel: "৫★ হোটেল",
+      rating: "4.9",
+      reviews: "196",
+      old: "৳১,৮০,০০০",
+      now: "১,৪৯,০০০",
+      img: "assets/images/umrah.jpeg",
+    },
+    {
+      dur: "7",
+      badge: "Best Seller",
+      title: "Umrah After Hajj, 2026",
+      loc: "মক্কা মুকাররমা",
+      days: "৭ দিন · ৬ রাত",
+      pax: "২–৩০ জন",
+      hotel: "৪★ হোটেল",
+      rating: "4.8",
+      reviews: "178",
+      old: "৳১,২০,০০০",
+      now: "৯৯,০০০",
+      img: "uploads/hajj-reg-img.png",
+    },
+    {
+      dur: "10",
+      badge: "Group Favourite",
+      title: "Short Umrah Package, July 2026",
+      loc: "মক্কা ও মদিনা",
+      days: "১০ দিন · ৯ রাত",
+      pax: "২–৪০ জন",
+      hotel: "৫★ হোটেল",
+      rating: "4.9",
+      reviews: "256",
+      old: "৳১,৪০,০০০",
+      now: "১,১২,০০০",
+      img: "assets/images/umrah.jpeg",
+    },
+    {
+      dur: "custom",
+      badge: "Customized",
+      title: "Umrah After Hajj, 2026",
+      loc: "মক্কা ও মদিনা",
+      days: "১৫ দিন · ১৪ রাত",
+      pax: "২–৬০ জন",
+      hotel: "৫★ হোটেল",
+      rating: "4.9",
+      reviews: "142",
+      old: "৳১,৮০,০০০",
+      now: "১,৪৯,০০০",
+      img: "uploads/hajj-reg-img.png",
+    },
+  ];
+
+  var heartSVG =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>';
+  var pinSVG =
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+  var clkSVG =
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var paxSVG =
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3.5-5 7-5s7 2 7 5"/><circle cx="17" cy="8" r="2.5"/></svg>';
+  var bedSVG =
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"/></svg>';
+  var arrSVG =
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  function buildCard(p) {
+    return (
+      '<article class="pkg" data-dur="' +
+      p.dur +
+      '">' +
+      '<div class="top"><img src="' +
+      p.img +
+      '" alt="' +
+      p.title +
+      '" data-ph="' +
+      p.title +
+      '" />' +
+      '<span class="tag">' +
+      p.badge +
+      '</span><span class="fav">' +
+      heartSVG +
+      "</span></div>" +
+      '<div class="body">' +
+      '<div class="loc">' +
+      pinSVG +
+      p.loc +
+      "</div>" +
+      "<h3>" +
+      p.title +
+      "</h3>" +
+      '<div class="meta"><span>' +
+      clkSVG +
+      p.days +
+      "</span><span>" +
+      paxSVG +
+      p.pax +
+      "</span><span>" +
+      bedSVG +
+      p.hotel +
+      "</span></div>" +
+      '<div class="rate"><span class="star">★</span><b>' +
+      p.rating +
+      "</b> (" +
+      p.reviews +
+      " reviews)</div>" +
+      '<div class="sep"></div>' +
+      '<div class="foot"><div class="price"><s>' +
+      p.old +
+      '</s> from<div class="now"><span class="tk">৳</span>' +
+      p.now +
+      "</div></div>" +
+      '<a class="vp" href="#">View package ' +
+      arrSVG +
+      "</a></div>" +
+      "</div></article>"
+    );
+  }
+
+  grid.innerHTML = packages.map(buildCard).join("");
+
+  document.querySelectorAll(".filter-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".filter-btn").forEach(function (b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+      var f = btn.dataset.filter;
+      grid.querySelectorAll(".pkg").forEach(function (card) {
+        if (f === "all" || card.dataset.dur === f) {
+          card.classList.remove("u-hidden");
+        } else {
+          card.classList.add("u-hidden");
+        }
+      });
+    });
+  });
+})();
+
+// ========== DESTINATION PAGE — region filter ==========
+(function () {
+  var cards = document.querySelectorAll(".dest-card");
+  if (!cards.length) return;
+  document.querySelectorAll(".filter-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".filter-btn").forEach(function (b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+      var r = btn.dataset.region;
+      cards.forEach(function (card) {
+        if (r === "all" || card.dataset.region === r) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    });
+  });
+})();
+
+// ========== HAJJ PAGE — file upload + track demo ==========
+(function () {
+  var upInput = document.getElementById("upInput");
+  if (upInput) {
+    var upName = document.getElementById("upName");
+    var upBrowse = document.getElementById("upBrowse");
+    if (upBrowse) {
+      upBrowse.addEventListener("click", function () {
+        upInput.click();
+      });
+    }
+    upInput.addEventListener("change", function () {
+      if (upInput.files && upInput.files.length) {
+        upName.textContent = upInput.files[0].name;
+        upName.classList.add("has-file");
+      } else {
+        upName.textContent = "Upload";
+        upName.classList.remove("has-file");
+      }
+    });
+  }
+
+  var trackBtn = document.getElementById("trackBtn");
+  var trackBox = document.getElementById("trackBox");
+  if (trackBtn && trackBox) {
+    trackBtn.addEventListener("click", function () {
+      trackBox.style.boxShadow = "0 0 0 2px rgba(237,28,36,0.25)";
+      setTimeout(function () {
+        trackBox.style.boxShadow = "";
+      }, 700);
+    });
+  }
 })();

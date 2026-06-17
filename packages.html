@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Packages - Discover Holidays LTD</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/packages.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -60,13 +59,6 @@
           class="hamburger"
           aria-label="Toggle menu"
           aria-expanded="false"
-          onclick="
-            document.body.classList.toggle('menu-open');
-            this.setAttribute(
-              'aria-expanded',
-              document.body.classList.contains('menu-open'),
-            );
-          "
         >
           <span></span><span></span><span></span>
         </button>
@@ -143,10 +135,7 @@
               <img
                 src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=80"
                 alt="Maldives"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Maldives';
-                "
+                data-ph="Maldives"
               />
               <span class="tag">Best Seller</span>
               <span class="fav"
@@ -252,14 +241,7 @@
 
           <article class="pkg">
             <div class="top">
-              <img
-                src="./assets/images/bali.jpg"
-                alt="Bali"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Bali';
-                "
-              />
+              <img src="./assets/images/bali.jpg" alt="Bali" data-ph="Bali" />
               <span class="tag">Group Favourite</span>
               <span class="fav"
                 ><svg
@@ -367,10 +349,7 @@
               <img
                 src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Tailand"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Dubai';
-                "
+                data-ph="Dubai"
               />
               <span class="tag">Visa Included</span>
               <span class="fav"
@@ -513,10 +492,7 @@
             <img
               src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air fare';
-              "
+              data-ph="Air fare"
             />
             <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
             <div class="overlay">
@@ -531,10 +507,7 @@
             <img
               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Coxs Bazar';
-              "
+              data-ph="Coxs Bazar"
             />
             <div class="cap">
               <small class="red" style="color: #ffd23f">Eid Special</small
@@ -552,10 +525,7 @@
             <img
               src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air ticket';
-              "
+              data-ph="Air ticket"
             />
             <div class="cap">
               <small>Travel this Eid at</small
@@ -641,8 +611,13 @@
                 </div>
                 <b>Email Us</b>
               </div>
-              <a href="mailto:discoverholidaysltd@gmail.com"
-                >discoverholidaysltd@gmail.com</a
+              <a
+                href="/cdn-cgi/l/email-protection#2c48455f4f435a495e44434045484d555f4058486c4b414d4540024f4341"
+                ><span
+                  class="__cf_email__"
+                  data-cfemail="8eeae7fdede1f8ebfce6e1e2e7eaeff7fde2faeacee9e3efe7e2a0ede1e3"
+                  >[email&#160;protected]</span
+                ></a
               >
               <small>We usually reply within 24 hours</small>
             </div>
@@ -702,12 +677,7 @@
               </div>
               <div class="field">
                 <label>Travel Date</label
-                ><input
-                  type="text"
-                  placeholder="DD/MM/YYYY"
-                  onfocus="this.type = 'date'"
-                  onblur="if (!this.value) this.type = 'text';"
-                />
+                ><input type="text" class="js-date" placeholder="DD/MM/YYYY" />
               </div>
             </div>
             <div class="field" style="margin-bottom: 8px">
@@ -845,8 +815,12 @@
                 /></svg
               ><span
                 >01730-716617<br /><a
-                  href="mailto:discoverholidaysltd@gmail.com"
-                  >discoverholidaysltd@gmail.com</a
+                  href="/cdn-cgi/l/email-protection#61050812020e170413090e0d08050018120d150521060c00080d4f020e0c"
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="6d09041e0e021b081f05020104090c141e0119092d0a000c0401430e0200"
+                    >[email&#160;protected]</span
+                  ></a
                 ></span
               >
             </div>
@@ -987,6 +961,10 @@
       </div>
     </div>
 
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
     <script src="js/script.js"></script>
   </body>
 </html>

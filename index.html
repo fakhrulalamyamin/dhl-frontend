@@ -24,7 +24,7 @@
           />
         </a>
         <nav class="menu" id="navmenu">
-          <a href="#">Destination</a>
+          <a href="destination.html">Destination</a>
           <a href="umrah.html">Umrah</a>
           <div class="menu-item">
             <a href="packages.html" class="dd-toggle"
@@ -44,7 +44,7 @@
             </a>
             <div class="dd">
               <a href="packages.html">All Package</a>
-              <a href="umrah.html">Umrah Package</a>
+              <a href="#">Umrah Package</a>
               <a href="#">Inbound Package</a>
               <a href="#">Corporate Group</a>
             </div>
@@ -62,13 +62,6 @@
           class="hamburger"
           aria-label="Toggle menu"
           aria-expanded="false"
-          onclick="
-            document.body.classList.toggle('menu-open');
-            this.setAttribute(
-              'aria-expanded',
-              document.body.classList.contains('menu-open'),
-            );
-          "
         >
           <span></span><span></span><span></span>
         </button>
@@ -382,10 +375,7 @@
               <img
                 src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=80"
                 alt="Maldives"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Maldives';
-                "
+                data-ph="Maldives"
               />
               <span class="tag">Best Seller</span>
               <span class="fav"
@@ -494,10 +484,7 @@
               <img
                 src="./assets/images/bali.jpg"
                 alt="Bali"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Bali';
-                "
+                data-ph="Bali"
               />
               <span class="tag">Group Favourite</span>
               <span class="fav"
@@ -606,10 +593,7 @@
               <img
                 src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Tailand"
-                onerror="
-                  this.parentNode.className = 'top ph';
-                  this.parentNode.dataset.l = 'Dubai';
-                "
+                data-ph="Dubai"
               />
               <span class="tag">Visa Included</span>
               <span class="fav"
@@ -820,10 +804,7 @@
               <img
                 src="./assets/images/umrah.jpeg"
                 alt="Umrah"
-                onerror="
-                  this.parentNode.className = 'img ph';
-                  this.parentNode.dataset.l = 'Makkah';
-                "
+                data-ph="Makkah"
               />
             </div>
             <div class="c">
@@ -833,8 +814,8 @@
                 guidance at every step.
               </p>
               <div class="acts">
-                <a class="mini gho" href="./umrah.html">Find Package</a
-                ><a class="mini red" href="./hajj.html">Hajj Registration</a>
+                <a class="mini gho" href="umrah.html">Find Package</a
+                ><a class="mini red" href="hajj.html">Hajj Registration</a>
               </div>
             </div>
           </article>
@@ -843,10 +824,7 @@
               <img
                 src="./assets/images/corporate.jpeg"
                 alt="Corporate group"
-                onerror="
-                  this.parentNode.className = 'img ph';
-                  this.parentNode.dataset.l = 'Corporate Team';
-                "
+                data-ph="Corporate Team"
               />
             </div>
             <div class="c">
@@ -865,10 +843,7 @@
               <img
                 src="https://images.unsplash.com/photo-1583794018021-c841442da0e3?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Bangladesh"
-                onerror="
-                  this.parentNode.className = 'img ph';
-                  this.parentNode.dataset.l = 'Bangladesh';
-                "
+                data-ph="Bangladesh"
               />
             </div>
             <div class="c">
@@ -900,92 +875,63 @@
             <img
               src="assets/gallery/gallery-01.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Group photo';
-              "
+              data-ph="Group photo"
             />
           </div>
           <div class="g tall">
             <img
               src="assets/gallery/gallery-02.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g tall ph';
-                this.parentNode.dataset.l = 'Langkawi eagle';
-              "
+              data-ph="Langkawi eagle"
             />
           </div>
           <div class="g wide">
             <img
               src="assets/gallery/gallery-03.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g wide ph';
-                this.parentNode.dataset.l = 'Tour group';
-              "
+              data-ph="Tour group"
             />
           </div>
           <div class="g">
             <img
               src="assets/gallery/gallery-04.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Travelers';
-              "
+              data-ph="Travelers"
             />
           </div>
           <div class="g wide">
             <img
               src="assets/gallery/gallery-05.png"
               alt=""
-              onerror=""
-              alt=""
-              onerror="
-                this.parentNode.className = 'g wide ph';
-                this.parentNode.dataset.l = 'City tour';
-              "
+              data-ph="City tour"
             />
           </div>
           <div class="g">
             <img
               src="assets/gallery/gallery-06.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Landmark';
-              "
+              data-ph="Landmark"
             />
           </div>
           <div class="g">
             <img
               src="assets/gallery/gallery-07.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Group';
-              "
+              data-ph="Group"
             />
           </div>
           <div class="g">
             <img
               src="assets/gallery/gallery-08.png"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Travel';
-              "
+              data-ph="Travel"
             />
           </div>
           <div class="g">
             <img
               src="assets/gallery/gallery-09.jpg"
               alt=""
-              onerror="
-                this.parentNode.className = 'g ph';
-                this.parentNode.dataset.l = 'Venice';
-              "
+              data-ph="Venice"
             />
           </div>
         </div>
@@ -1068,7 +1014,7 @@
                 <img
                   src="./uploads/testimonial1.webp"
                   alt=""
-                  onerror="this.style.display = 'none'"
+                  data-hide-on-error
                 />
               </div>
               <div>
@@ -1081,10 +1027,7 @@
             <img
               src="./assets/images/testimonial.png"
               alt="Testimonial video"
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Testimonial video';
-              "
+              data-ph="Testimonial video"
             />
             <div class="play" id="vidPlayBtn" data-video="g1-j9DVuQCI" role="button" tabindex="0" aria-label="Play testimonial video">
               <svg
@@ -1111,7 +1054,7 @@
                 <img
                   src="./uploads/testimonial2.webp"
                   alt=""
-                  onerror="this.style.display = 'none'"
+                  data-hide-on-error
                 />
               </div>
               <div><b>Md. Mokarrom Hossain, CMA</b><small>Director, HR & OD · T.K. GROUP</small></div>
@@ -1129,7 +1072,7 @@
                 <img
                   src="./uploads/testimonial3.webp"
                   alt=""
-                  onerror="this.style.display = 'none'"
+                  data-hide-on-error
                 />
               </div>
               <div>
@@ -1149,7 +1092,7 @@
                 <img
                   src="./uploads/testimonial1.webp"
                   alt=""
-                  onerror="this.style.display = 'none'"
+                  data-hide-on-error
                 />
               </div>
               <div><b>Md. Alam Chowdhury</b><small>HR Lead · Robi Axiata</small></div>
@@ -1198,10 +1141,7 @@
             <img
               src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air fare';
-              "
+              data-ph="Air fare"
             />
             <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
             <div class="overlay">
@@ -1216,10 +1156,7 @@
             <img
               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Coxs Bazar';
-              "
+              data-ph="Coxs Bazar"
             />
             <div class="cap">
               <small class="red" style="color: #ffd23f">Eid Special</small
@@ -1237,10 +1174,7 @@
             <img
               src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air ticket';
-              "
+              data-ph="Air ticket"
             />
             <div class="cap">
               <small>Travel this Eid at</small
@@ -1389,9 +1323,7 @@
                 <label>Travel Date</label
                 ><input
                   type="text"
-                  placeholder="DD/MM/YYYY"
-                  onfocus="this.type = 'date'"
-                  onblur="if (!this.value) this.type = 'text';"
+                  class="js-date" placeholder="DD/MM/YYYY"
                 />
               </div>
             </div>

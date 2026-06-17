@@ -62,13 +62,6 @@
           class="hamburger"
           aria-label="Toggle menu"
           aria-expanded="false"
-          onclick="
-            document.body.classList.toggle('menu-open');
-            this.setAttribute(
-              'aria-expanded',
-              document.body.classList.contains('menu-open'),
-            );
-          "
         >
           <span></span><span></span><span></span>
         </button>
@@ -133,7 +126,7 @@
           </div>
         </div>
         <div class="why-img">
-          <img src="uploads/about banner-01.png" alt="Traveler with gear" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Why Choose Us';" />
+          <img src="uploads/about banner-01.png" alt="Traveler with gear" data-ph="Why Choose Us" />
         </div>
       </div>
     </section>
@@ -142,7 +135,7 @@
     <section class="pad">
       <div class="wrap about-sec">
         <div class="about-globe">
-          <img src="uploads/globe.png" alt="Global Network" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Global Network';" />
+          <img src="uploads/globe.png" alt="Global Network" data-ph="Global Network" />
         </div>
         <div class="about-col">
           <span class="eyebrow">Who We Are</span>
@@ -240,7 +233,7 @@
           <div class="leader">
             <div class="leader-img">
               <div class="leader-photo">
-                <img src="uploads/chairman.png" alt="Chairman" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Chairman';" />
+                <img src="uploads/chairman.png" alt="Chairman" data-ph="Chairman" />
               </div>
               <div class="leader-name">
                 <b>MD MAZHARUL ISLAM</b>
@@ -268,7 +261,7 @@
           <div class="leader reverse">
             <div class="leader-img">
               <div class="leader-photo">
-                <img src="uploads/mdsir.png" alt="Managing Director" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Managing Director';" />
+                <img src="uploads/mdsir.png" alt="Managing Director" data-ph="Managing Director" />
               </div>
               <div class="leader-name">
                 <b>MD AZHARUL ISLAM</b>
@@ -311,7 +304,7 @@
         <div class="team-grid">
           <div class="team-member" data-dept="operations">
             <div class="tm-img">
-              <img src="uploads/team-01.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-01.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Md Mizanur Rahman</h4>
@@ -320,7 +313,7 @@
           </div>
           <div class="team-member" data-dept="sales">
             <div class="tm-img">
-              <img src="uploads/team-02.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-02.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Jahirul Islam</h4>
@@ -329,7 +322,7 @@
           </div>
           <div class="team-member" data-dept="support">
             <div class="tm-img">
-              <img src="uploads/team-03.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-03.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Al-Yeasa Jaman Sakib</h4>
@@ -338,7 +331,7 @@
           </div>
           <div class="team-member" data-dept="finance">
             <div class="tm-img">
-              <img src="uploads/team-04.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-04.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Nusrat Tasnim Nilima</h4>
@@ -347,7 +340,7 @@
           </div>
           <div class="team-member" data-dept="operations">
             <div class="tm-img">
-              <img src="uploads/team-05.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-05.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Mohsina Akter</h4>
@@ -356,7 +349,7 @@
           </div>
           <div class="team-member" data-dept="sales">
             <div class="tm-img">
-              <img src="uploads/team-06.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-06.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Siam Ahmed</h4>
@@ -365,7 +358,7 @@
           </div>
           <div class="team-member" data-dept="support">
             <div class="tm-img">
-              <img src="uploads/team-07.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-07.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Md Fakhrul Alam Yamin</h4>
@@ -374,7 +367,7 @@
           </div>
           <div class="team-member" data-dept="finance">
             <div class="tm-img">
-              <img src="uploads/team-08.png" alt="Team Member" onerror="this.parentNode.classList.add('ph'); this.parentNode.dataset.l = 'Team Member';" />
+              <img src="uploads/team-08.png" alt="Team Member" data-ph="Team Member" />
             </div>
             <div class="tm-info">
               <h4>Shakil Ahmed</h4>
@@ -499,10 +492,7 @@
             <img
               src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air fare';
-              "
+              data-ph="Air fare"
             />
             <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
             <div class="overlay">
@@ -517,10 +507,7 @@
             <img
               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Coxs Bazar';
-              "
+              data-ph="Coxs Bazar"
             />
             <div class="cap">
               <small class="red" style="color: #ffd23f">Eid Special</small
@@ -538,10 +525,7 @@
             <img
               src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
               alt=""
-              onerror="
-                this.parentNode.classList.add('ph');
-                this.parentNode.dataset.l = 'Air ticket';
-              "
+              data-ph="Air ticket"
             />
             <div class="cap">
               <small>Travel this Eid at</small
@@ -627,12 +611,7 @@
                 </div>
                 <b>Email Us</b>
               </div>
-              <a href="mailto:discoverholidaysltd@gmail.com"
-                ><span
-                  class="__cf_email__"
-                  data-cfemail="e3878a90808c9586918b8c8f8a87829a908f9787a3848e828a8fcd808c8e"
-                  >discoverholidaysltd@gmail.com</span
-                ></a
+              <a href="/cdn-cgi/l/email-protection#04606d77676b7261766c6b686d60657d77687060446369656d682a676b69"><span class="__cf_email__" data-cfemail="27434e5444485142554f484b4e43465e544b534367404a464e4b0944484a">[email&#160;protected]</span></a
               >
               <small>We usually reply within 24 hours</small>
             </div>
@@ -694,9 +673,7 @@
                 <label>Travel Date</label
                 ><input
                   type="text"
-                  placeholder="DD/MM/YYYY"
-                  onfocus="this.type = 'date'"
-                  onblur="if (!this.value) this.type = 'text';"
+                  class="js-date" placeholder="DD/MM/YYYY"
                 />
               </div>
             </div>
@@ -833,17 +810,10 @@
                 <path
                   d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
                 /></svg
+              ><span
+                >01730-716617<br /><a href="/cdn-cgi/l/email-protection#acc8c5dfcfc3dac9dec4c3c0c5c8cdd5dfc0d8c8eccbc1cdc5c082cfc3c1"><span class="__cf_email__" data-cfemail="d4b0bda7b7bba2b1a6bcbbb8bdb0b5ada7b8a0b094b3b9b5bdb8fab7bbb9">[email&#160;protected]</span></a
+                ></span
               >
-              <span
-                >01730-716617<br />
-                <a href="mailto:discoverholidaysltd@gmail.com">
-                  <span
-                    class="__cf_email__"
-                    data-cfemail="c1a5a8b2a2aeb7a4b3a9aeada8a5a0b8b2adb5a581a6aca0a8adefa2aeac"
-                    >discoverholidaysltd@gmail.com</span
-                  >
-                </a>
-              </span>
             </div>
             <div class="accred" style="margin-top: 16px">
               <div
@@ -950,448 +920,6 @@
       </div>
     </footer>
 
-    <style>
-      /* Hero Quote Section */
-      .hero-quote {
-        background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-        text-align: center;
-      }
-
-      .quote-container {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .quote-text {
-        font-size: 48px;
-        font-weight: 800;
-        line-height: 1.3;
-        margin-bottom: 16px;
-        color: #1a1a1a;
-      }
-
-      .quote-sub {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 32px;
-      }
-
-      /* Experience Section */
-      .exp-sec {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        align-items: center;
-      }
-
-      .exp-content .eyebrow {
-        color: #e63946;
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
-
-      .exp-content h2 {
-        font-size: 42px;
-        font-weight: 800;
-        line-height: 1.2;
-        margin: 16px 0 32px;
-        color: #1a1a1a;
-      }
-
-      .exp-content h2 .red {
-        color: #e63946;
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin-top: 32px;
-      }
-
-      .stat-card {
-        background: #f5f5f5;
-        padding: 24px;
-        border-radius: 8px;
-        text-align: center;
-      }
-
-      .stat-num {
-        font-size: 32px;
-        font-weight: 800;
-        color: #e63946;
-        margin-bottom: 8px;
-      }
-
-      .stat-label {
-        font-size: 14px;
-        color: #666;
-        font-weight: 500;
-      }
-
-      .exp-image img {
-        width: 100%;
-        border-radius: 12px;
-      }
-
-      /* About Section */
-      .about-sec {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        align-items: center;
-      }
-
-      .about-sec .eyebrow {
-        color: #e63946;
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
-
-      .about-sec h2 {
-        font-size: 42px;
-        font-weight: 800;
-        margin: 8px 0 24px;
-        color: #1a1a1a;
-      }
-
-      .about-sec p {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      .about-image img {
-        width: 100%;
-        border-radius: 12px;
-      }
-
-      .about-globe {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .about-globe img {
-        width: 100%;
-        max-width: 430px;
-        height: auto;
-        object-fit: contain;
-      }
-
-      /* Values Section */
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      .value-card {
-        background: white;
-        padding: 20px 22px;
-        border-radius: 8px;
-        border-left: 3px solid #e63946;
-      }
-
-      .vc-icon {
-        width: 34px;
-        height: 34px;
-        background: #e63946;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        margin-bottom: 12px;
-      }
-
-      .vc-icon svg {
-        color: white;
-        width: 18px;
-        height: 18px;
-      }
-
-      .value-card h3 {
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 8px;
-        color: #1a1a1a;
-      }
-
-      .value-card p {
-        font-size: 12.5px;
-        line-height: 1.6;
-        color: #666;
-      }
-
-      /* Leadership Section */
-      .leadership-sec {
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-      }
-
-      .leader {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        align-items: center;
-      }
-
-      .leader.reverse {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .leader.reverse .leader-img {
-        order: 2;
-      }
-
-      .leader.reverse .leader-content {
-        order: 1;
-      }
-
-      .leader-img {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .leader-photo {
-        width: 320px;
-        max-width: 100%;
-      }
-
-      .leader-photo img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .leader-name {
-        text-align: center;
-        margin-top: 16px;
-      }
-
-      .leader-name b {
-        display: block;
-        font-size: 16px;
-        font-weight: 700;
-        color: #e63946;
-        letter-spacing: 0.02em;
-      }
-
-      .leader-name small {
-        color: #666;
-        font-weight: 500;
-        font-size: 13px;
-      }
-
-      .leader-content h3 {
-        font-size: 28px;
-        font-weight: 800;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-      }
-
-      .leader-content p {
-        font-size: 15px;
-        line-height: 1.8;
-        color: #333;
-        margin-bottom: 16px;
-      }
-
-      .leader-sig {
-        margin-top: 24px;
-      }
-
-      .leader-sig b {
-        display: block;
-        font-size: 16px;
-        color: #1a1a1a;
-        margin-bottom: 4px;
-      }
-
-      .leader-sig small {
-        color: #e63946;
-        font-weight: 600;
-      }
-
-      /* Team Section */
-      .team-filters {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        margin-bottom: 48px;
-        flex-wrap: wrap;
-      }
-
-      .tf-btn {
-        padding: 8px 18px;
-        border: 1px solid #d8d8d8;
-        background: white;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 12.5px;
-        font-weight: 600;
-        transition: all 0.25s ease;
-        color: #555;
-      }
-
-      .tf-btn:hover {
-        border-color: #e63946;
-        color: #e63946;
-      }
-
-      .tf-btn.active {
-        background: #e63946;
-        color: white;
-        border-color: #e63946;
-      }
-
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 32px;
-      }
-
-      .team-member {
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .team-member:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 28px rgba(0,0,0,0.16);
-      }
-
-      .tm-img img {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        object-fit: cover;
-        display: block;
-      }
-
-      .tm-info {
-        position: absolute;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        background: #fff;
-        border-radius: 7px;
-        padding: 10px 14px;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-        text-align: left;
-      }
-
-      .tm-info h4 {
-        font-size: 14px;
-        font-weight: 700;
-        color: #e63946;
-        margin-bottom: 2px;
-      }
-
-      .tm-info small {
-        color: #333;
-        font-weight: 500;
-        font-size: 12px;
-      }
-
-      /* Affiliations */
-      .aff-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 880px;
-        margin: 0 auto;
-      }
-
-      .aff-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 14px 16px;
-      }
-
-      .aff-item:nth-child(odd) {
-        border-right: 1px solid #e2e2e2;
-      }
-
-      .aff-item:nth-child(1),
-      .aff-item:nth-child(2) {
-        border-bottom: 1px solid #e2e2e2;
-      }
-
-      .aff-item img {
-        max-width: 100%;
-        max-height: 90px;
-        height: auto;
-        object-fit: contain;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .quote-text {
-          font-size: 32px;
-        }
-
-        .exp-sec,
-        .about-sec {
-          grid-template-columns: 1fr;
-          gap: 32px;
-        }
-
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .values-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .leader {
-          grid-template-columns: 1fr;
-        }
-
-        .leader.reverse .leader-img,
-        .leader.reverse .leader-content {
-          order: initial;
-        }
-
-        .team-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .aff-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 480px) {
-        .quote-text {
-          font-size: 24px;
-        }
-
-        .exp-content h2 {
-          font-size: 28px;
-        }
-
-        .team-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .aff-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

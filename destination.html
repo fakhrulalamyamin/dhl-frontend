@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="bn">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ওমরাহ প্যাকেজ — Discover Holidays LTD</title>
+    <title>Destinations — Discover Holidays LTD</title>
     <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -24,8 +24,8 @@
           />
         </a>
         <nav class="menu" id="navmenu">
-          <a href="index.html">Destination</a>
-          <a href="umrah.html" style="color: var(--red)">Umrah</a>
+          <a href="destination.html" style="color: var(--red)">Destination</a>
+          <a href="umrah.html">Umrah</a>
           <div class="menu-item">
             <a href="#" class="dd-toggle"
               >Package
@@ -68,339 +68,378 @@
       </div>
     </header>
 
-    <!-- ============ HERO ============ -->
-    <section class="u-hero">
-      <div class="u-hero-bg">
-        <img
-          src="uploads/umrah-hero-back.png"
-          alt="পবিত্র মক্কা মুকাররমা"
-          data-ph-bg="linear-gradient(160deg,#ddd6c6 0%,#c4b89a 100%)"
-        />
-      </div>
-      <div class="u-hero-body">
-        <div class="u-hero-copy">
-          <h1>আল্লাহর সন্তুষ্টির উদ্দেশ্যে<br />হজ্জ ও ওমরাহ পালন করুন</h1>
-          <p>
-            প্রতিটি পদক্ষেপে আমরা আপনার পাশে আছি — নির্ভরযোগ্য, অভিজ্ঞ ও
-            পরিচর্যাশীল সেবায় আপনার পবিত্র সফর নিশ্চিত করি।
-          </p>
-          <div class="u-hero-btns">
-            <a href="#packages" class="btn-ghost">প্যাকেজ দেখুন</a>
-            <a href="#plan" class="btn btn-red">হজ্জ রেজিষ্ট্রেশন</a>
-          </div>
-        </div>
-      </div>
-      <div class="u-stat-bar">
-        <div class="u-stat-bar-inner">
-          <div class="u-sbox s-purple">
-            <b>১৪ হাজার+</b>
-            <span class="st-sub">সন্তুষ্ট হজযাত্রী</span>
-            <p>
-              আমাদের পেশাদার সেবায় আজ পর্যন্ত ১৪ হাজারেরও বেশি মুসলিম ভাই-বোন
-              সন্তুষ্টচিত্তে হজ ও ওমরাহ পালন করেছেন।
-            </p>
-          </div>
-          <div class="u-sbox s-navy">
-            <b>১২+</b>
-            <span class="st-sub">বছরের অভিজ্ঞতা</span>
-            <p>
-              দীর্ঘ ১২ বছরের অভিজ্ঞতা নিয়ে আমরা প্রতিটি যাত্রীর পাশে আছি
-              নির্ভরযোগ্য ও পরিচর্যাশীল সেবার নিশ্চয়তায়।
-            </p>
-          </div>
-          <div class="u-sbox s-gold">
-            <b>৩০+</b>
-            <span class="st-sub">অভিজ্ঞ গাইড</span>
-            <p>
-              সফল ও দক্ষ ৩০ জনেরও বেশি অভিজ্ঞ গাইড আপনার পবিত্র সফরকে সহজ ও
-              নিরাপদ করে তোলেন।
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ============ INTRO ============ -->
+    <div class="dest-intro">
+      <h1>Explore Our Top Destinations</h1>
+      <p>
+        From the peaks of the Himalayas to the depths of the Amazon, choose your
+        next adventure.
+      </p>
+    </div>
 
-    <!-- ============ UMRAH PACKAGES ============ -->
-    <section class="pad bg-gray" id="packages">
+    <!-- ============ DESTINATIONS ============ -->
+    <section class="dest-section">
       <div class="wrap">
-        <div class="sec-center">
-          <h2 class="h-display">বিশেষ ওমরাহ প্যাকেজসমূহ</h2>
-          <p class="sec-sub">
-            সাশ্রয়ী ও পরিকল্পিত ওমরাহ প্যাকেজ — আপনার সুবিধামতো বেছে নিন
-          </p>
+        <div class="region-filters">
+          <button class="filter-btn active" data-region="all">Asia</button>
+          <button class="filter-btn" data-region="europe">Europe</button>
+          <button class="filter-btn" data-region="africa">Africa</button>
+          <button class="filter-btn" data-region="america">America</button>
+          <button class="filter-btn" data-region="oceania">Oceania</button>
         </div>
-        <div class="pkg-filters">
-          <button class="filter-btn active" data-filter="all">সকল</button>
-          <button class="filter-btn" data-filter="7">৭ দিন</button>
-          <button class="filter-btn" data-filter="10">১০ দিন</button>
-          <button class="filter-btn" data-filter="15">১৫ দিন</button>
-          <button class="filter-btn" data-filter="custom">কাস্টমাইজড</button>
-        </div>
-        <div class="u-pkg-grid" id="umrahGrid"></div>
-        <div class="center-btn">
-          <a class="btn btn-red" href="#">সকল ওমরাহ প্যাকেজ দেখুন</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ HAJJ REGISTRATION ============ -->
-    <section class="pad">
-      <div class="wrap">
-        <div class="hajj-wrap">
-          <div class="hajj-img-col">
-            <img
-              src="uploads/hajj-reg-img.png"
-              alt="হজ নিবন্ধন ২০২৭"
-              data-ph-bg="#dce8f5"
-            />
-          </div>
-          <div class="hajj-text-col">
-            <h2>২০২৭ সালের হজের<br />নিবন্ধন করুন</h2>
-            <p>
-              সৌদি সরকারের নির্দেশনা অনুযায়ী এখনই আপনার হজ নিবন্ধন সম্পন্ন
-              করুন। প্রতি বছর আসন সীমিত থাকে — দেরি না করে আজই যোগাযোগ করুন এবং
-              আপনার স্বপ্নের হজ যাত্রা নিশ্চিত করুন।
-            </p>
-            <a href="#plan" class="btn btn-red">নিবন্ধন করুন →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ UMRAH STEPS ============ -->
-    <section class="pad bg-gray">
-      <div class="wrap">
-        <div class="sec-center">
-          <h2 class="h-display">ওমরাহ পালনের ধাপসমূহ</h2>
-          <p class="sec-sub">
-            এই সহজ ধাপগুলো অনুসরণ করে পরিকল্পনামতো আপনার পবিত্র ওমরাহ পালন করুন
-          </p>
-        </div>
-        <div class="steps-row">
-          <div class="step-card">
-            <div class="step-badge">ধাপ ১</div>
-            <div class="step-ico">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <h3>প্রস্তুতি ও ইহরাম</h3>
-            <p>
-              নিজেকে পবিত্র করুন, ইহরামের কাপড় পরিধান করুন এবং মিকাত অতিক্রম
-              করার আগে ওমরাহর নিয়ত (সংকল্প) করুন।
-            </p>
-          </div>
-          <div class="step-arrow">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </div>
-          <div class="step-card">
-            <div class="step-badge">ধাপ ২</div>
-            <div class="step-ico">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                />
-                <polyline points="14,2 14,8 20,8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-                <polyline points="10,9 9,9 8,9" />
-              </svg>
-            </div>
-            <h3>তাওয়াফ ও সাঈ</h3>
-            <p>
-              কাবা শরীফ সাতবার প্রদক্ষিণ করে তাওয়াফ সম্পন্ন করুন। এরপর সাফা ও
-              মারওয়া পাহাড়ের মাঝে সাতবার হেঁটে সাঈ সম্পন্ন করুন।
-            </p>
-          </div>
-          <div class="step-arrow">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </div>
-          <div class="step-card">
-            <div class="step-badge">ধাপ ৩</div>
-            <div class="step-ico">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
-            </div>
-            <h3>মাথা মুণ্ডন বা চুল ছোট করা</h3>
-            <p>
-              পুরুষরা মাথা মুণ্ডন করুন (হলক) বা চুল ছোট করুন (তাকসির)। নারীরা
-              তাদের চুলের সামান্য অংশ কেটে নিন।
-            </p>
-          </div>
-        </div>
-        <div class="center-btn">
-          <a class="btn btn-red" href="#plan">আরও বিস্তারিত জানুন</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ KAABA INFOGRAPHIC ============ -->
-    <section class="kaaba-info">
-      <img src="uploads/kaaba-large.png" alt="পবিত্র কাবার পরিচিতি" />
-    </section>
-
-    <!-- ============ OUR SERVICES ============ -->
-    <section class="pad">
-      <div class="wrap srv-layout">
-        <div class="srv-img">
-          <!-- Replace with your image -->
-          <img src="uploads/kaaba.png" alt="ডিসকভার হলিডেজ সেবা" />
-        </div>
-        <div class="srv-body">
-          <h2 class="h-display">আমাদের সেবাসমূহ</h2>
-          <span class="sec-sub"
-            >সর্বোচ্চ মানের সেবায় আপনার ওমরাহ সফর নিশ্চিত করতে আমরা সর্বদা
-            প্রস্তুত</span
-          >
-          <div class="srv-grid">
-            <div class="srv-item">
-              <div class="srv-ico">
+        <div class="dest-grid">
+          <!-- Featured large -->
+          <a class="dest-card feat" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Create your Dubai Experience</h3>
+              <span class="dc-more"
+                >Learn More
                 <svg
-                  width="24"
-                  height="24"
+                  width="13"
+                  height="13"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.13-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h4>বিমান টিকিটিং</h4>
-                <p>
-                  নিরাপদ ও সাশ্রয়ী বিমান টিকিটিং সেবা সরাসরি আপনার দোরগোড়ায়।
-                </p>
-              </div>
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
             </div>
-            <div class="srv-item">
-              <div class="srv-ico">
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+                alt="Dubai skyline"
+                data-ph="Dubai"
+              />
+            </div>
+          </a>
+
+          <!-- Malaysia -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Malaysia</h3>
+              <span class="dc-more"
+                >Learn More
                 <svg
-                  width="24"
-                  height="24"
+                  width="13"
+                  height="13"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9,22 9,12 15,12 15,22" />
-                </svg>
-              </div>
-              <div>
-                <h4>হোটেল বুকিং</h4>
-                <p>
-                  মক্কা ও মদিনার সেরা হোটেলে আরামদায়ক থাকার সম্পূর্ণ ব্যবস্থা।
-                </p>
-              </div>
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
             </div>
-            <div class="srv-item">
-              <div class="srv-ico">
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80"
+                alt="Kuala Lumpur"
+                data-ph="Malaysia"
+              />
+            </div>
+          </a>
+
+          <!-- Bhutan -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Bhutan</h3>
+              <span class="dc-more"
+                >Learn More
                 <svg
-                  width="24"
-                  height="24"
+                  width="13"
+                  height="13"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <rect x="2" y="3" width="20" height="14" rx="2" />
-                  <path d="M8 21h8M12 17v4" />
-                </svg>
-              </div>
-              <div>
-                <h4>ভিসা ও বীমা সেবা</h4>
-                <p>
-                  দ্রুত ও নির্ভরযোগ্য ভিসা প্রসেসিং এবং ট্রাভেল বীমা সেবা
-                  প্রদান।
-                </p>
-              </div>
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
             </div>
-            <div class="srv-item">
-              <div class="srv-ico">
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1553856622-d1b352e9a211?auto=format&fit=crop&w=600&q=80"
+                alt="Bhutan"
+                data-ph="Bhutan"
+              />
+            </div>
+          </a>
+
+          <!-- Nepal -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Nepal</h3>
+              <span class="dc-more"
+                >Learn More
                 <svg
-                  width="24"
-                  height="24"
+                  width="13"
+                  height="13"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.2"
                   stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <rect x="1" y="3" width="15" height="13" rx="1" />
-                  <polygon points="16,8 20,8 23,11 23,16 16,16 16,8" />
-                  <circle cx="5.5" cy="18.5" r="2.5" />
-                  <circle cx="18.5" cy="18.5" r="2.5" />
-                </svg>
-              </div>
-              <div>
-                <h4>গ্রাউন্ড সার্ভিস</h4>
-                <p>
-                  সৌদি আরবে সকল গ্রাউন্ড ট্রান্সপোর্টেশন ও অভিজ্ঞ গাইড সুবিধা।
-                </p>
-              </div>
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
             </div>
-          </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80"
+                alt="Nepal"
+                data-ph="Nepal"
+              />
+            </div>
+          </a>
+
+          <!-- Saudi Arabia -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Saudi Arabia</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=600&q=80"
+                alt="Saudi Arabia"
+                data-ph="Saudi Arabia"
+              />
+            </div>
+          </a>
+
+          <!-- Row of 4 -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Malaysia</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80"
+                alt="Kuala Lumpur"
+                data-ph="Malaysia"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Bhutan</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1553856622-d1b352e9a211?auto=format&fit=crop&w=600&q=80"
+                alt="Bhutan"
+                data-ph="Bhutan"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Malaysia</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80"
+                alt="Kuala Lumpur"
+                data-ph="Malaysia"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Bhutan</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1553856622-d1b352e9a211?auto=format&fit=crop&w=600&q=80"
+                alt="Bhutan"
+                data-ph="Bhutan"
+              />
+            </div>
+          </a>
+
+          <!-- Row of 4 -->
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Nepal</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80"
+                alt="Nepal"
+                data-ph="Nepal"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Saudi Arabia</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=600&q=80"
+                alt="Saudi Arabia"
+                data-ph="Saudi Arabia"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Nepal</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80"
+                alt="Nepal"
+                data-ph="Nepal"
+              />
+            </div>
+          </a>
+          <a class="dest-card" data-region="asia" href="#">
+            <div class="dc-head">
+              <h3>Saudi Arabia</h3>
+              <span class="dc-more"
+                >Learn More
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" /></svg
+              ></span>
+            </div>
+            <div class="dc-img">
+              <img
+                src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=600&q=80"
+                alt="Saudi Arabia"
+                data-ph="Saudi Arabia"
+              />
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -414,6 +453,7 @@
             <img
               src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
               alt=""
+              data-ph="Air fare"
             />
             <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
             <div class="overlay">
@@ -428,6 +468,7 @@
             <img
               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
               alt=""
+              data-ph="Coxs Bazar"
             />
             <div class="cap">
               <small class="red" style="color: #ffd23f">Eid Special</small
@@ -445,6 +486,7 @@
             <img
               src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
               alt=""
+              data-ph="Air ticket"
             />
             <div class="cap">
               <small>Travel this Eid at</small
@@ -480,6 +522,7 @@
           </p>
         </div>
         <div class="plan-grid">
+          <!-- left info -->
           <div>
             <div class="info-card">
               <div class="info-head">
@@ -557,6 +600,7 @@
               </p>
             </div>
           </div>
+          <!-- right form -->
           <div class="form-card">
             <h3>Request a Free Quote</h3>
             <div class="sub">
@@ -580,22 +624,22 @@
               <div class="field">
                 <label>Service</label>
                 <select>
-                  <option>Umrah Package</option>
-                  <option>Hajj Registration</option>
+                  <option>Tour Package</option>
                   <option>Air Ticketing</option>
                   <option>Visa Services</option>
+                  <option>Umrah Package</option>
                   <option>Corporate Tour</option>
                 </select>
               </div>
               <div class="field">
-                <label>Travel Date</label>
-                <input type="text" class="js-date" placeholder="DD/MM/YYYY" />
+                <label>Travel Date</label
+                ><input type="text" class="js-date" placeholder="DD/MM/YYYY" />
               </div>
             </div>
             <div class="field" style="margin-bottom: 8px">
               <label>Message</label
               ><textarea
-                placeholder="Group size, preferred package, any questions…"
+                placeholder="Group Size, Destination, anything else..."
               ></textarea>
             </div>
             <button class="btn btn-red">Send Message</button>
@@ -709,9 +753,8 @@
               >
                 <path
                   d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
-                />
-              </svg>
-              <span
+                /></svg
+              ><span
                 >Discover Holidays LTD — Siddique Tower, Level 5, 9 Bir Uttam
                 A.K. Khandakar Road, Mohakhali C/A, Dhaka-1212, Bangladesh</span
               >
@@ -725,9 +768,8 @@
               >
                 <path
                   d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
-                />
-              </svg>
-              <span
+                /></svg
+              ><span
                 >01730-716617<br /><a
                   href="mailto:discoverholidaysltd@gmail.com"
                   >discoverholidaysltd@gmail.com</a
@@ -838,38 +880,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- ============ YOUTUBE MODAL ============ -->
-    <div
-      class="yt-modal"
-      id="ytModal"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Video"
-    >
-      <div class="yt-modal-inner">
-        <button class="yt-close" id="ytClose" aria-label="Close video">
-          &times;
-        </button>
-        <div class="yt-frame-wrap">
-          <iframe
-            id="ytFrame"
-            src=""
-            title="Video"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-    </div>
 
     <script src="js/script.js"></script>
   </body>
