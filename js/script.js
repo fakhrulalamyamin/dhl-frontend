@@ -673,3 +673,32 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
     });
   }
 })();
+
+// ========== PACKAGES PAGE — dual price range slider ==========
+(function () {
+  var minRange = document.getElementById("minRange");
+  var maxRange = document.getElementById("maxRange");
+  var minVal = document.getElementById("minVal");
+  var maxVal = document.getElementById("maxVal");
+  var fill = document.getElementById("rangeFill");
+  if (!minRange || !maxRange) return;
+
+  function updateSlider() {
+    var min = parseInt(minRange.min);
+    var max = parseInt(minRange.max);
+    var lo = parseInt(minRange.value);
+    var hi = parseInt(maxRange.value);
+    if (lo > hi) { lo = hi; minRange.value = lo; }
+    if (hi < lo) { hi = lo; maxRange.value = hi; }
+    var pctLo = ((lo - min) / (max - min)) * 100;
+    var pctHi = ((hi - min) / (max - min)) * 100;
+    fill.style.left = pctLo + "%";
+    fill.style.width = (pctHi - pctLo) + "%";
+    minVal.textContent = lo.toLocaleString();
+    maxVal.textContent = hi.toLocaleString();
+  }
+
+  minRange.addEventListener("input", updateSlider);
+  maxRange.addEventListener("input", updateSlider);
+  updateSlider();
+})();
