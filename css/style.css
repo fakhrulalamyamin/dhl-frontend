@@ -1734,6 +1734,12 @@ footer .bottom .cr {
   .feat {
     grid-template-columns: 1fr;
   }
+  .why {
+    gap: 30px;
+  }
+  .why-stats {
+    gap: 24px;
+  }
   .plan-top {
     gap: 20px;
   }
@@ -3343,10 +3349,18 @@ footer .bottom .cr {
   }
   .leader {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   .leader.reverse .leader-img,
   .leader.reverse .leader-content {
     order: initial;
+  }
+  .leadership-sec {
+    gap: 48px;
+  }
+  .leader-content h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
   }
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3367,6 +3381,22 @@ footer .bottom .cr {
   }
   .aff-grid {
     grid-template-columns: 1fr;
+  }
+  .why-stats {
+    gap: 14px;
+  }
+  .why-stats .ws b {
+    font-size: 24px;
+  }
+  .why-stats .ws small {
+    font-size: 10.5px;
+    letter-spacing: 0;
+  }
+  .leadership-sec {
+    gap: 36px;
+  }
+  .leader-content h3 {
+    font-size: 20px;
   }
 }
 
