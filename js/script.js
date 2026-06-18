@@ -702,3 +702,15 @@ document.querySelectorAll(".dd-toggle").forEach(function (t) {
   maxRange.addEventListener("input", updateSlider);
   updateSlider();
 })();
+
+// Contact page — FAQ accordion
+document.querySelectorAll(".faq-q").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var item = btn.closest(".faq-item");
+    var isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(function (el) {
+      el.classList.remove("open");
+    });
+    if (!isOpen) item.classList.add("open");
+  });
+});
