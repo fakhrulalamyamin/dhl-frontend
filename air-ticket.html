@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Ticket - Discover Holidays LTD</title>
+    <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          <img src="assets/discover-holidays-logo.png" alt="Discover Holidays LTD" />
+        </a>
+        <nav class="menu" id="navmenu">
+          <a href="destination.html">Destination</a>
+          <a href="umrah.html">Umrah</a>
+          <div class="menu-item">
+            <a href="packages.html" class="dd-toggle">Package
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="dd">
+              <a href="packages.html">All Package</a>
+              <a href="#">Umrah Package</a>
+              <a href="inbound.html">Inbound Package</a>
+              <a href="#">Corporate Group</a>
+            </div>
+          </div>
+          <a href="visa.html">Visa</a>
+          <a href="air-ticket.html" style="color:var(--red)">Air Ticket Offer</a>
+          <a href="blog.html">Blog</a>
+          <a href="about-us.html">About Us</a>
+          <a class="btn btn-red menu-cta" href="contact-us.html">Contact Us</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-red" href="contact-us.html">Contact Us</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="at-hero">
+      <div class="at-hero-text">
+        <h1>Find Air Tickets at Best Price.</h1>
+        <p>Get Exclusive offers on any airline to any destination.</p>
+        <a href="#at-search" class="at-offer-btn">Get Offer</a>
+      </div>
+      <div class="at-plane-slider">
+        <div class="at-plane active" id="atPlane0">
+          <img src="uploads/emirates-plane.png" alt="Emirates Airlines" />
+        </div>
+        <div class="at-plane" id="atPlane1">
+          <img src="uploads/airasia.png" alt="AirAsia" />
+        </div>
+        <div class="at-plane" id="atPlane2">
+          <img src="uploads/biman.png" alt="Biman Bangladesh Airlines" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEARCH ============ -->
+    <section class="at-search-sec" id="at-search">
+      <div class="wrap">
+        <h2>Plan Your Journey</h2>
+        <p class="at-search-sub">Easy search and book your flights<br>in any Air Line</p>
+        <div class="at-search-bar">
+          <div class="sb-field">
+            <label>Flight Type</label>
+            <select>
+              <option>Domestic</option>
+              <option>International</option>
+            </select>
+            <svg class="sb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="sb-field">
+            <label>Class</label>
+            <select>
+              <option>Economy</option>
+              <option>Business</option>
+              <option>First Class</option>
+            </select>
+            <svg class="sb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="sb-field">
+            <label>Air Line</label>
+            <select>
+              <option>All Air Line</option>
+              <option>Biman Bangladesh</option>
+              <option>Air Asia</option>
+              <option>Emirates</option>
+              <option>Qatar Airways</option>
+              <option>Us-Bangla Airlines</option>
+              <option>Indigo</option>
+            </select>
+            <svg class="sb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <button class="sb-btn" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="at-layout">
+
+      <!-- ---- FILTER SIDEBAR ---- -->
+      <aside class="at-sidebar">
+        <div class="filter-header">
+          <h3>Filters</h3>
+          <button class="btn-reset" id="atResetBtn">Reset</button>
+        </div>
+
+        <!-- Price Range -->
+        <div class="filter-group">
+          <label>Price Range</label>
+          <div class="price-slider">
+            <div class="price-labels">
+              <div class="price-label-col">
+                <span class="price-label-text">Minimum Price</span>
+                <span class="price-val" id="atMinVal">25000</span>
+              </div>
+              <div class="price-label-col price-label-right">
+                <span class="price-label-text">Maximum Price</span>
+                <span class="price-val" id="atMaxVal">350000</span>
+              </div>
+            </div>
+            <div class="range-wrap">
+              <div class="range-track">
+                <div class="range-fill" id="atRangeFill"></div>
+              </div>
+              <input type="range" min="0" max="500000" value="25000"  id="atMinRange" class="range-input" />
+              <input type="range" min="0" max="500000" value="350000" id="atMaxRange" class="range-input" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Number of Stops -->
+        <div class="filter-group">
+          <label>Number of Stops</label>
+          <div class="checkbox-list">
+            <label><input type="checkbox" /> Non Stop</label>
+            <label><input type="checkbox" checked /> 1 Stop</label>
+            <label><input type="checkbox" /> 2 Stop</label>
+          </div>
+        </div>
+
+        <!-- Airline -->
+        <div class="filter-group">
+          <label>Airline</label>
+          <div class="checkbox-list">
+            <label><input type="checkbox" /> Biman Bangla...</label>
+            <label><input type="checkbox" checked /> Air Asia</label>
+            <label><input type="checkbox" /> Us Bangla</label>
+            <label><input type="checkbox" /> Emirates</label>
+            <label><input type="checkbox" /> Indigo</label>
+          </div>
+        </div>
+
+        <!-- Refundability -->
+        <div class="filter-group border-none">
+          <label>Refundability</label>
+          <div class="checkbox-list">
+            <label><input type="radio" name="refund" checked /> Non Refundable</label>
+            <label><input type="radio" name="refund" /> Refundable</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ---- FLIGHT RESULTS ---- -->
+      <div class="at-content">
+
+        <!-- No-flight banner -->
+        <div class="at-no-flight">
+          <div class="nf-text">
+            <h4>Could not find your desire flight</h4>
+            <p>Just fill out this form, a representative will call and assist you!</p>
+          </div>
+          <div class="nf-actions">
+            <a href="contact-us.html" class="nf-btn-booking">Booking Form</a>
+            <span class="nf-phone">Call: 01730-716617</span>
+          </div>
+        </div>
+
+        <!-- Flight Card 1 (with open accordion) -->
+        <div class="flight-card">
+          <div class="flight-card-inner">
+            <div class="fc-best-val">Best Value</div>
+            <div class="flight-card-main">
+              <div class="fc-airline">
+                <div class="fc-airline-logo">
+                  <span class="al-name">QATAR</span>
+                  <span class="al-sub">Airways</span>
+                </div>
+              </div>
+              <div class="fc-route">
+                <div class="fc-city">
+                  <span class="city-name">Dhaka</span>
+                </div>
+                <div class="fc-flight-line">
+                  <div class="fc-line-track">
+                    <span class="dot"></span>
+                    <span class="line-dashed"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fc-plane-icon">
+                      <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                    <span class="line-dashed"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="fc-duration">
+                    <span>6hr 30min</span>
+                    <span class="stops">1 Stop (DAB)</span>
+                  </div>
+                </div>
+                <div class="fc-city">
+                  <span class="city-name">Madina</span>
+                </div>
+              </div>
+              <div class="fc-price-block">
+                <div class="price-label">Starting From</div>
+                <div class="price-amount">78,000 <span class="price-currency">BDT</span></div>
+              </div>
+              <button class="fc-book-btn">Book Now</button>
+            </div>
+            <div class="fc-footer">
+              <div class="fc-tags">
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Non Refundable
+                </span>
+                <span class="fc-sep">|</span>
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                  Pay Later
+                </span>
+              </div>
+              <button class="fc-details-link" onclick="toggleAccordion(this)">Hide Details ▴</button>
+            </div>
+          </div>
+          <div class="fc-accordion open" id="acc1">
+            <div class="fc-acc-tabs">
+              <button class="fc-acc-tab active" onclick="switchTab(this, 'bag1')">Baggage</button>
+              <button class="fc-acc-tab" onclick="switchTab(this, 'pol1')">Policy</button>
+            </div>
+            <div class="fc-acc-pane" id="bag1">
+              Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
+            </div>
+            <div class="fc-acc-pane" id="pol1" style="display:none">
+              Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees. Changes must be requested at least 24 hours before departure. No-show forfeits the entire fare.
+            </div>
+          </div>
+        </div>
+
+        <!-- Flight Card 2 -->
+        <div class="flight-card">
+          <div class="flight-card-inner">
+            <div class="fc-best-val">Best Value</div>
+            <div class="flight-card-main">
+              <div class="fc-airline">
+                <div class="fc-airline-logo">
+                  <span class="al-name">QATAR</span>
+                  <span class="al-sub">Airways</span>
+                </div>
+              </div>
+              <div class="fc-route">
+                <div class="fc-city">
+                  <span class="city-name">Dhaka</span>
+                </div>
+                <div class="fc-flight-line">
+                  <div class="fc-line-track">
+                    <span class="dot"></span>
+                    <span class="line-dashed"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fc-plane-icon">
+                      <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                    <span class="line-dashed"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="fc-duration">
+                    <span>6hr 30min</span>
+                    <span class="stops">1 Stop (DAB)</span>
+                  </div>
+                </div>
+                <div class="fc-city">
+                  <span class="city-name">Madina</span>
+                </div>
+              </div>
+              <div class="fc-price-block">
+                <div class="price-label">Starting From</div>
+                <div class="price-amount">78,000 <span class="price-currency">BDT</span></div>
+              </div>
+              <button class="fc-book-btn">Book Now</button>
+            </div>
+            <div class="fc-footer">
+              <div class="fc-tags">
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Non Refundable
+                </span>
+                <span class="fc-sep">|</span>
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                  Pay Later
+                </span>
+              </div>
+              <button class="fc-details-link" onclick="toggleAccordion(this)">More Details ▾</button>
+            </div>
+          </div>
+          <div class="fc-accordion" id="acc2">
+            <div class="fc-acc-tabs">
+              <button class="fc-acc-tab active" onclick="switchTab(this, 'bag2')">Baggage</button>
+              <button class="fc-acc-tab" onclick="switchTab(this, 'pol2')">Policy</button>
+            </div>
+            <div class="fc-acc-pane" id="bag2">
+              Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
+            </div>
+            <div class="fc-acc-pane" id="pol2" style="display:none">
+              Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees. Changes must be requested at least 24 hours before departure.
+            </div>
+          </div>
+        </div>
+
+        <!-- Flight Card 3 -->
+        <div class="flight-card">
+          <div class="flight-card-inner">
+            <div class="fc-best-val">Best Value</div>
+            <div class="flight-card-main">
+              <div class="fc-airline">
+                <div class="fc-airline-logo">
+                  <span class="al-name">QATAR</span>
+                  <span class="al-sub">Airways</span>
+                </div>
+              </div>
+              <div class="fc-route">
+                <div class="fc-city"><span class="city-name">Dhaka</span></div>
+                <div class="fc-flight-line">
+                  <div class="fc-line-track">
+                    <span class="dot"></span>
+                    <span class="line-dashed"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fc-plane-icon">
+                      <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                    <span class="line-dashed"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="fc-duration">
+                    <span>6hr 30min</span>
+                    <span class="stops">1 Stop (DAB)</span>
+                  </div>
+                </div>
+                <div class="fc-city"><span class="city-name">Madina</span></div>
+              </div>
+              <div class="fc-price-block">
+                <div class="price-label">Starting From</div>
+                <div class="price-amount">78,000 <span class="price-currency">BDT</span></div>
+              </div>
+              <button class="fc-book-btn">Book Now</button>
+            </div>
+            <div class="fc-footer">
+              <div class="fc-tags">
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Non Refundable
+                </span>
+                <span class="fc-sep">|</span>
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                  Pay Later
+                </span>
+              </div>
+              <button class="fc-details-link" onclick="toggleAccordion(this)">More Details ▾</button>
+            </div>
+          </div>
+          <div class="fc-accordion" id="acc3">
+            <div class="fc-acc-tabs">
+              <button class="fc-acc-tab active" onclick="switchTab(this, 'bag3')">Baggage</button>
+              <button class="fc-acc-tab" onclick="switchTab(this, 'pol3')">Policy</button>
+            </div>
+            <div class="fc-acc-pane" id="bag3">
+              Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
+            </div>
+            <div class="fc-acc-pane" id="pol3" style="display:none">
+              Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
+            </div>
+          </div>
+        </div>
+
+        <!-- Flight Card 4 -->
+        <div class="flight-card">
+          <div class="flight-card-inner">
+            <div class="fc-best-val">Best Value</div>
+            <div class="flight-card-main">
+              <div class="fc-airline">
+                <div class="fc-airline-logo">
+                  <span class="al-name">QATAR</span>
+                  <span class="al-sub">Airways</span>
+                </div>
+              </div>
+              <div class="fc-route">
+                <div class="fc-city"><span class="city-name">Dhaka</span></div>
+                <div class="fc-flight-line">
+                  <div class="fc-line-track">
+                    <span class="dot"></span>
+                    <span class="line-dashed"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fc-plane-icon">
+                      <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                    <span class="line-dashed"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="fc-duration">
+                    <span>6hr 30min</span>
+                    <span class="stops">1 Stop (DAB)</span>
+                  </div>
+                </div>
+                <div class="fc-city"><span class="city-name">Madina</span></div>
+              </div>
+              <div class="fc-price-block">
+                <div class="price-label">Starting From</div>
+                <div class="price-amount">78,000 <span class="price-currency">BDT</span></div>
+              </div>
+              <button class="fc-book-btn">Book Now</button>
+            </div>
+            <div class="fc-footer">
+              <div class="fc-tags">
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Non Refundable
+                </span>
+                <span class="fc-sep">|</span>
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                  Pay Later
+                </span>
+              </div>
+              <button class="fc-details-link" onclick="toggleAccordion(this)">More Details ▾</button>
+            </div>
+          </div>
+          <div class="fc-accordion" id="acc4">
+            <div class="fc-acc-tabs">
+              <button class="fc-acc-tab active" onclick="switchTab(this, 'bag4')">Baggage</button>
+              <button class="fc-acc-tab" onclick="switchTab(this, 'pol4')">Policy</button>
+            </div>
+            <div class="fc-acc-pane" id="bag4">
+              Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
+            </div>
+            <div class="fc-acc-pane" id="pol4" style="display:none">
+              Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
+            </div>
+          </div>
+        </div>
+
+        <!-- Flight Card 5 -->
+        <div class="flight-card">
+          <div class="flight-card-inner">
+            <div class="fc-best-val">Best Value</div>
+            <div class="flight-card-main">
+              <div class="fc-airline">
+                <div class="fc-airline-logo">
+                  <span class="al-name">QATAR</span>
+                  <span class="al-sub">Airways</span>
+                </div>
+              </div>
+              <div class="fc-route">
+                <div class="fc-city"><span class="city-name">Dhaka</span></div>
+                <div class="fc-flight-line">
+                  <div class="fc-line-track">
+                    <span class="dot"></span>
+                    <span class="line-dashed"></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fc-plane-icon">
+                      <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                    <span class="line-dashed"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="fc-duration">
+                    <span>6hr 30min</span>
+                    <span class="stops">1 Stop (DAB)</span>
+                  </div>
+                </div>
+                <div class="fc-city"><span class="city-name">Madina</span></div>
+              </div>
+              <div class="fc-price-block">
+                <div class="price-label">Starting From</div>
+                <div class="price-amount">78,000 <span class="price-currency">BDT</span></div>
+              </div>
+              <button class="fc-book-btn">Book Now</button>
+            </div>
+            <div class="fc-footer">
+              <div class="fc-tags">
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Non Refundable
+                </span>
+                <span class="fc-sep">|</span>
+                <span class="fc-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                  Pay Later
+                </span>
+              </div>
+              <button class="fc-details-link" onclick="toggleAccordion(this)">More Details ▾</button>
+            </div>
+          </div>
+          <div class="fc-accordion" id="acc5">
+            <div class="fc-acc-tabs">
+              <button class="fc-acc-tab active" onclick="switchTab(this, 'bag5')">Baggage</button>
+              <button class="fc-acc-tab" onclick="switchTab(this, 'pol5')">Policy</button>
+            </div>
+            <div class="fc-acc-pane" id="bag5">
+              Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
+            </div>
+            <div class="fc-acc-pane" id="pol5" style="display:none">
+              Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="at-pagination">
+          <p class="page-info">Page 1/10, Total 90 Destinations</p>
+          <div class="page-btns">
+            <button class="at-pb">Prev</button>
+            <button class="at-pb active">1</button>
+            <button class="at-pb">2</button>
+            <button class="at-pb">3</button>
+            <button class="at-pb at-pb-dots">...</button>
+            <button class="at-pb">10</button>
+            <button class="at-pb">Next</button>
+          </div>
+        </div>
+
+      </div><!-- /at-content -->
+    </div><!-- /at-layout -->
+
+    <!-- ============ EXCLUSIVE OFFERS ============ -->
+    <section class="pad bg-gray">
+      <div class="wrap">
+        <h3 class="off-head">Exclusive Offers Just for You!</h3>
+        <div class="off-grid">
+          <div class="off">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Student Air Fare" />
+            <div class="cap">
+              <small>Student Special</small>
+              <b>AIR FARE</b>
+            </div>
+            <div class="overlay">
+              <p>Get exclusive discounts on airfares for students. Book your next adventure with special rates.</p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Eid Special Cox's Bazar" />
+            <div class="cap">
+              <small style="color:#ffd23f">Eid Special</small>
+              <b>SEAGULL</b>
+              <small>Hotel Cox's Bazar</small>
+            </div>
+            <div class="overlay">
+              <p>Celebrate Eid with our special hotel packages at Seagull, Cox's Bazar. Limited time offer.</p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80" alt="Lower Cost Air Ticket" />
+            <div class="cap">
+              <small>Travel this Eid at</small>
+              <b style="color:#ffd23f">lower cost</b>
+              <b style="font-size:18px">Air Ticket</b>
+            </div>
+            <div class="overlay">
+              <p>Travel this Eid at the lowest possible cost. Book your air tickets now and save big.</p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN / CONTACT ============ -->
+    <section class="pad" id="plan">
+      <div class="wrap">
+        <div class="plan-top">
+          <div>
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="h-display">
+              Let's plan your<span class="alt">next departure</span>
+            </h2>
+          </div>
+          <p>Have questions about our packages or want to customize your own tour? Our travel experts are here to help you craft the perfect itinerary.</p>
+        </div>
+        <div class="plan-grid">
+          <!-- left info -->
+          <div>
+            <div class="info-card">
+              <div class="info-head">
+                <div class="ic">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"/>
+                  </svg>
+                </div>
+                <b>Call Us</b>
+              </div>
+              <div class="info-grid">
+                <div class="it"><b>Air Ticketing</b><span>01730-716617</span></div>
+                <div class="it"><b>Visa Services</b><span>01730-716619</span></div>
+                <div class="it"><b>Tour Packages</b><span>01977-242404</span></div>
+                <div class="it"><b>Umrah Services</b><span>01329-680390</span></div>
+              </div>
+            </div>
+            <div class="info-card mail">
+              <div class="info-head">
+                <div class="ic">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+                  </svg>
+                </div>
+                <b>Email Us</b>
+              </div>
+              <a href="mailto:discoverholidaysltd@gmail.com">discoverholidaysltd@gmail.com</a>
+              <small>We usually reply within 24 hours</small>
+            </div>
+            <div class="info-card addr">
+              <div class="info-head">
+                <div class="ic">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+                  </svg>
+                </div>
+                <b>Visit at Office</b>
+              </div>
+              <p class="name">
+                <b>Discover Holidays LTD</b> — Siddique Tower, Level 5<br>
+                49 Bir Uttam A.K. Khandakar Road<br>Mohakhali C/A, Dhaka-1212, Bangladesh
+              </p>
+            </div>
+          </div>
+          <!-- right form -->
+          <div class="form-card">
+            <h3>Request a Free Quote</h3>
+            <div class="sub">For quick help, include your name, service, and travel date.</div>
+            <div class="frow">
+              <div class="field">
+                <label>Full name</label><input type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label>Phone</label><input type="text" placeholder="WhatsApp Number" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom:18px">
+              <label>Email</label><input type="email" placeholder="Your Email" />
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Service</label>
+                <select>
+                  <option>Air Ticketing</option>
+                  <option>Tour Package</option>
+                  <option>Visa Services</option>
+                  <option>Umrah Package</option>
+                  <option>Corporate Tour</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Travel Date</label><input type="text" placeholder="DD/MM/YYYY" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom:8px">
+              <label>Message</label>
+              <textarea placeholder="Group Size, Destination, anything else..."></textarea>
+            </div>
+            <button class="btn btn-red">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="top">
+        <img class="cloud" style="left:4%;top:18%;width:120px" src="uploads/cloud1.png" alt="" />
+        <img class="cloud" style="right:5%;bottom:30%;width:150px" src="uploads/cloud2.png" alt="" />
+        <div class="wrap f-grid">
+          <div class="f-brand">
+            <div class="logo">
+              <img src="assets/discover-holidays-logo.png" alt="Discover Holidays LTD" style="height:50px" />
+            </div>
+            <p>Your Dhaka-based partner for group &amp; corporate tours, air ticketing, visa processing and Umrah — trusted by 25,000+ travelers across 100+ destinations.</p>
+            <div class="socials">
+              <a href="#" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H18V.2C17.6.1 16.4 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>
+              </a>
+              <a href="#" aria-label="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.3-5-4.5-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="f-services">
+            <h5>Services</h5>
+            <div class="f-links">
+              <a href="packages.html">Tour Packages</a>
+              <a href="air-ticket.html">Air Ticketing</a>
+              <a href="visa.html">Visa Services</a>
+              <a href="umrah.html">Umrah Packages</a>
+              <a href="#">Corporate Tours</a>
+            </div>
+          </div>
+          <div class="f-office">
+            <h5>Visit our office</h5>
+            <div class="row">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              <span>Discover Holidays LTD — Siddique Tower, Level 5, 9 Bir Uttam A.K. Khandakar Road, Mohakhali C/A, Dhaka-1212, Bangladesh</span>
+            </div>
+            <div class="row">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"/></svg>
+              <span>01730-716617<br><a href="mailto:discoverholidaysltd@gmail.com">discoverholidaysltd@gmail.com</a></span>
+            </div>
+            <div style="margin-top:16px">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center">
+                <div style="text-align:center">
+                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Accredited Member</div>
+                  <img src="uploads/accredation-01.png" alt="IATA" style="height:32px;object-fit:contain" />
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Civil Authority</div>
+                  <img src="uploads/accredation-03.png" alt="CAB" style="height:32px;object-fit:contain" />
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">International</div>
+                  <img src="uploads/accredation-04.png" alt="BASIS" style="height:32px;object-fit:contain" />
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Best Agency 2025</div>
+                  <img src="uploads/accredation1-01.png" alt="ATAB" style="height:32px;object-fit:contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="wrap">
+          <div class="cr">© 2026 | Discover Holidays LTD | All Rights Reserved</div>
+          <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // ---- Plane auto-slider (slide left-to-right) ----
+      (function () {
+        var planes = document.querySelectorAll('.at-plane');
+        if (!planes.length) return;
+        var idx = 0;
+        setInterval(function () {
+          var prev = idx;
+          idx = (idx + 1) % planes.length;
+          planes[prev].classList.remove('active');
+          planes[prev].classList.add('leaving');
+          planes[idx].classList.add('active');
+          setTimeout(function () {
+            planes[prev].classList.remove('leaving');
+          }, 900);
+        }, 3200);
+      })();
+
+      // ---- Dual price range slider ----
+      (function () {
+        var mn = document.getElementById('atMinRange');
+        var mx = document.getElementById('atMaxRange');
+        var mnV = document.getElementById('atMinVal');
+        var mxV = document.getElementById('atMaxVal');
+        var fill = document.getElementById('atRangeFill');
+        if (!mn) return;
+        function update() {
+          var lo = parseInt(mn.value), hi = parseInt(mx.value);
+          if (lo > hi) { var t = lo; lo = hi; hi = t; mn.value = lo; mx.value = hi; }
+          mnV.textContent = lo.toLocaleString();
+          mxV.textContent = hi.toLocaleString();
+          var pct1 = (lo / 500000) * 100;
+          var pct2 = (hi / 500000) * 100;
+          fill.style.left = pct1 + '%';
+          fill.style.width = (pct2 - pct1) + '%';
+        }
+        mn.addEventListener('input', update);
+        mx.addEventListener('input', update);
+        update();
+      })();
+
+      // ---- Flight card accordion ----
+      function toggleAccordion(btn) {
+        var card = btn.closest('.flight-card');
+        var acc = card.querySelector('.fc-accordion');
+        var isOpen = acc.classList.contains('open');
+        acc.classList.toggle('open', !isOpen);
+        btn.textContent = isOpen ? 'More Details ▾' : 'Hide Details ▴';
+      }
+
+      // ---- Accordion tab switch ----
+      function switchTab(btn, paneId) {
+        var acc = btn.closest('.fc-accordion');
+        acc.querySelectorAll('.fc-acc-tab').forEach(function (t) { t.classList.remove('active'); });
+        acc.querySelectorAll('.fc-acc-pane').forEach(function (p) { p.style.display = 'none'; });
+        btn.classList.add('active');
+        document.getElementById(paneId).style.display = 'block';
+      }
+
+      // ---- Pagination ----
+      document.querySelectorAll('.at-pb').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (this.classList.contains('at-pb-dots')) return;
+          var txt = this.textContent.trim();
+          if (txt === 'Prev' || txt === 'Next') return;
+          document.querySelectorAll('.at-pb').forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+        });
+      });
+
+      // ---- Reset filter ----
+      document.getElementById('atResetBtn').addEventListener('click', function () {
+        document.querySelectorAll('.at-sidebar input[type="checkbox"]').forEach(function (c) { c.checked = false; });
+        document.querySelectorAll('.at-sidebar input[type="radio"]').forEach(function (r) { r.checked = false; });
+      });
+    </script>
+
+  </body>
+</html>
