@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Discover Holidays LTD</title>
+    <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* ===== BLOG: THE LATEST ===== */
+      .blog-latest {
+        padding: 52px 0 48px;
+      }
+      .blog-latest-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .latest-card {
+        border: 1px solid #e8e8e8;
+        border-radius: 16px;
+        padding: 24px;
+        background: #fff;
+        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.07);
+        transition: box-shadow 0.2s;
+      }
+      .latest-card:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.11);
+      }
+      .bl-label {
+        font-size: 19px;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 20px;
+      }
+      .featured-img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        display: block;
+      }
+      .featured-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a2e;
+        line-height: 1.45;
+        margin-bottom: 8px;
+      }
+      .bl-meta {
+        font-size: 13px;
+        color: #999;
+        margin-bottom: 10px;
+      }
+      .bl-meta .bl-author {
+        color: var(--red);
+        font-weight: 600;
+      }
+      .bl-excerpt {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 14px;
+      }
+      .bl-read {
+        color: var(--red);
+        font-size: 13.5px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.15s;
+      }
+      .bl-read:hover {
+        gap: 8px;
+      }
+      /* Top stories */
+      .story-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #f0f0f0;
+        align-items: flex-start;
+      }
+      .story-item:first-child {
+        padding-top: 0;
+      }
+      .story-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .story-thumb {
+        width: 88px;
+        height: 66px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex: none;
+      }
+      .story-title {
+        font-size: 14.5px;
+        font-weight: 600;
+        color: #1a1a2e;
+        line-height: 1.4;
+        margin-bottom: 6px;
+      }
+
+      /* ===== BLOG: BROWSE ===== */
+      .blog-browse {
+        padding: 0 0 64px;
+      }
+      .browse-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .browse-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a2e;
+      }
+      .bl-search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 9px 14px;
+        background: #fff;
+        width: 220px;
+      }
+      .bl-search input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        width: 100%;
+        font-family: inherit;
+        color: #333;
+        background: transparent;
+      }
+      .bl-search input::placeholder {
+        color: #bbb;
+      }
+      .bl-search svg {
+        color: #aaa;
+        flex: none;
+      }
+      .filter-bar {
+        display: flex;
+        align-items: center;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        padding: 12px 22px;
+        margin-bottom: 32px;
+        background: #fff;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+      .f-tab {
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #555;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+        padding: 0;
+        transition: color 0.15s;
+      }
+      .f-tab.active,
+      .f-tab:hover {
+        color: var(--red);
+        font-weight: 600;
+      }
+      .f-sep {
+        color: #ccc;
+        margin: 0 18px;
+        user-select: none;
+        font-weight: 300;
+      }
+
+      /* ===== BLOG GRID ===== */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+        margin-bottom: 36px;
+      }
+      .blog-card {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #ebebeb;
+        background: #fff;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .blog-card:hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+      .bc-img {
+        width: 100%;
+        height: 172px;
+        object-fit: cover;
+        display: block;
+      }
+      .bc-body {
+        padding: 16px 18px 20px;
+      }
+      .bc-meta {
+        font-size: 12.5px;
+        color: #aaa;
+        margin-bottom: 7px;
+      }
+      .bc-meta .bl-author {
+        color: var(--red);
+        font-weight: 600;
+      }
+      .bc-title {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #1a1a2e;
+        line-height: 1.45;
+        margin-bottom: 8px;
+      }
+      .bc-excerpt {
+        font-size: 13px;
+        color: #888;
+        line-height: 1.65;
+        margin-bottom: 12px;
+      }
+
+      /* ===== PAGINATION ===== */
+      .blog-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        font-size: 13.5px;
+        color: #777;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .page-nums {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .pg {
+        min-width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #555;
+        cursor: pointer;
+        padding: 0 6px;
+        transition: 0.15s;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+      .pg.active {
+        background: var(--red);
+        color: #fff;
+        font-weight: 700;
+      }
+      .pg:hover:not(.active) {
+        background: #f5f5f5;
+      }
+      .pg-btn {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #555;
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+        padding: 0 4px;
+      }
+      .pg-btn:hover {
+        color: var(--red);
+      }
+
+      /* ===== NEWSLETTER ===== */
+      .newsletter-wrap {
+        padding: 60px 0;
+        background: var(--gray);
+      }
+      .newsletter-box {
+        background: #1c2e4a;
+        border-radius: 18px;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
+        min-height: 190px;
+        position: relative;
+      }
+      .nl-art {
+        flex: none;
+        width: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.04);
+        position: relative;
+        overflow: hidden;
+      }
+      .nl-art-inner {
+        position: relative;
+        width: 180px;
+        height: 130px;
+      }
+      .nl-env {
+        position: absolute;
+        opacity: 0.85;
+      }
+      .nl-content {
+        flex: 1;
+        padding: 40px 48px 40px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .nl-content h3 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .nl-content p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 20px;
+      }
+      .nl-form {
+        display: flex;
+        gap: 12px;
+        max-width: 400px;
+      }
+      .nl-form input {
+        flex: 1;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        padding: 11px 15px;
+        font-size: 14px;
+        font-family: inherit;
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+      .nl-form input::placeholder {
+        color: rgba(255, 255, 255, 0.38);
+      }
+      .nl-form input:focus {
+        border-color: var(--red);
+      }
+      .nl-form button {
+        background: var(--red);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 11px 22px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        white-space: nowrap;
+        transition: opacity 0.15s;
+      }
+      .nl-form button:hover {
+        opacity: 0.88;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 960px) {
+        .blog-latest-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .nl-art {
+          display: none;
+        }
+        .nl-content {
+          padding: 36px;
+        }
+      }
+      @media (max-width: 640px) {
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .browse-top {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .bl-search {
+          width: 100%;
+        }
+        .blog-pagination {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/discover-holidays-logo.png"
+            alt="Discover Holidays LTD"
+          />
+        </a>
+        <nav class="menu" id="navmenu">
+          <a href="index.html">Destination</a>
+          <a href="umrah.html">Umrah</a>
+          <div class="menu-item">
+            <a href="#" class="dd-toggle"
+              >Package
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="dd">
+              <a href="packages.html">All Package</a>
+              <a href="#">Umrah Package</a>
+              <a href="inbound.html">Inbound Package</a>
+              <a href="#">Corporate Group</a>
+            </div>
+          </div>
+          <a href="visa.html">Visa</a>
+          <a href="#">Air Ticket Offer</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="about-us.html">About Us</a>
+          <a class="btn btn-red menu-cta" href="contact-us.html">Contact Us</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-red" href="contact-us.html">Contact Us</a>
+        </div>
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ THE LATEST ============ -->
+    <section class="blog-latest">
+      <div class="wrap">
+        <div class="blog-latest-grid">
+          <!-- Featured Post -->
+          <div class="latest-card">
+            <p class="bl-label">The Latest</p>
+            <a href="#">
+              <img
+                class="featured-img"
+                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+                alt="Essential Travel Tips Before Booking an International Trip"
+              />
+            </a>
+            <h2 class="featured-title">
+              <a href="#"
+                >Essential Travel Tips Before Booking an International Trip |
+                Discover Holidays</a
+              >
+            </h2>
+            <p class="bl-meta">
+              July 21, 2026 &nbsp;|&nbsp;
+              <span class="bl-author">Mazharul Islam</span>
+            </p>
+            <p class="bl-excerpt">
+              Planning an international trip is an exciting experience, but
+              proper preparation is essential to avoid unexpected problems.
+            </p>
+            <a href="blog-single.html" class="bl-read">
+              Read Full Article
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Top Stories -->
+          <div class="latest-card">
+            <p class="bl-label">Top Stories</p>
+
+            <div class="story-item">
+              <img
+                class="story-thumb"
+                src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?auto=format&fit=crop&w=300&q=80"
+                alt="Schengen Visas"
+              />
+              <div>
+                <h4 class="story-title">
+                  <a href="#"
+                    >The Ultimate Guide to Schengen Visas: Common Mistakes to
+                    Avoid</a
+                  >
+                </h4>
+                <p class="bl-meta">
+                  July 21, 2026 &nbsp;|&nbsp;
+                  <span class="bl-author">Mazharul Islam</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <img
+                class="story-thumb"
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=300&q=80"
+                alt="Peak Season vs Off-Season"
+              />
+              <div>
+                <h4 class="story-title">
+                  <a href="#"
+                    >Peak Season vs. Off-Season: How to Choose Your Travel
+                    Dates</a
+                  >
+                </h4>
+                <p class="bl-meta">
+                  July 21, 2026 &nbsp;|&nbsp;
+                  <span class="bl-author">Mazharul Islam</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <img
+                class="story-thumb"
+                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=300&q=80"
+                alt="Hidden Costs of International Travel"
+              />
+              <div>
+                <h4 class="story-title">
+                  <a href="#">Hidden Costs of International Travel</a>
+                </h4>
+                <p class="bl-meta">
+                  July 21, 2026 &nbsp;|&nbsp;
+                  <span class="bl-author">Mazharul Islam</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BROWSE BY CATEGORY ============ -->
+    <section class="blog-browse">
+      <div class="wrap">
+        <!-- Header row -->
+        <div class="browse-top">
+          <p class="browse-title">Browse By Category</p>
+          <div class="bl-search">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-bar">
+          <button class="f-tab active">All</button>
+          <span class="f-sep">|</span>
+          <button class="f-tab">Travel Story</button>
+          <span class="f-sep">|</span>
+          <button class="f-tab">Tour Offers</button>
+          <span class="f-sep">|</span>
+          <button class="f-tab">Visa Update</button>
+          <span class="f-sep">|</span>
+          <button class="f-tab">Air Ticket</button>
+        </div>
+
+        <!-- Blog cards grid -->
+        <div class="blog-grid">
+          <!-- Card 1 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80"
+              alt="Essential Travel Tips"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">
+                Essential Travel Tips Before Booking an International Trip
+              </h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?auto=format&fit=crop&w=600&q=80"
+              alt="Schengen Visas"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">
+                The Ultimate Guide to Schengen Visas: Common Mistakes to Avoid
+              </h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
+              alt="Peak Season vs Off-Season"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">
+                Peak Season vs. Off-Season: How to Choose Your Travel Dates
+              </h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+              alt="Hidden Costs of International Travel"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">Hidden Costs of International Travel</h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+              alt="DIY Travel vs Travel Agency"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">
+                DIY Travel vs. Using a Travel Agency: Which Is Right for You?
+              </h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="blog-card">
+            <img
+              class="bc-img"
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80"
+              alt="Travel Insurance"
+            />
+            <div class="bc-body">
+              <p class="bc-meta">
+                July 21, 2026 &nbsp;|&nbsp;
+                <span class="bl-author">Mazharul Islam</span>
+              </p>
+              <h3 class="bc-title">
+                5 Reasons You Should Never Skip Travel Insurance
+              </h3>
+              <p class="bc-excerpt">
+                Planning an international trip is an exciting experience, but
+                proper preparation is essential to avoid unexpected problems.
+              </p>
+              <a href="#" class="bl-read">
+                Read Full Article
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="blog-pagination">
+          <span>Page 1/10, Total 90 Blogs</span>
+          <div class="page-nums">
+            <button class="pg-btn">Prev</button>
+            <button class="pg active">1</button>
+            <button class="pg">2</button>
+            <button class="pg">3</button>
+            <button class="pg" style="letter-spacing: 2px; color: #bbb;">...</button>
+            <button class="pg">10</button>
+            <button class="pg-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="newsletter-wrap">
+      <div class="wrap">
+        <div class="newsletter-box">
+          <!-- Decorative art -->
+          <div class="nl-art">
+            <div class="nl-art-inner">
+              <!-- Large envelope center -->
+              <svg
+                class="nl-env"
+                style="left: 30px; top: 30px;"
+                width="120"
+                height="90"
+                viewBox="0 0 120 90"
+                fill="none"
+              >
+                <rect x="1" y="1" width="118" height="88" rx="10" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                <path d="M1 15 L60 52 L119 15" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+              </svg>
+              <!-- Small envelope top-right -->
+              <svg
+                class="nl-env"
+                style="right: -10px; top: -8px; transform: rotate(18deg);"
+                width="56"
+                height="42"
+                viewBox="0 0 56 42"
+                fill="none"
+              >
+                <rect x="1" y="1" width="54" height="40" rx="5" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+                <path d="M1 8 L28 24 L55 8" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" fill="none"/>
+              </svg>
+              <!-- Small envelope bottom-left -->
+              <svg
+                class="nl-env"
+                style="left: -12px; bottom: -4px; transform: rotate(-14deg);"
+                width="50"
+                height="37"
+                viewBox="0 0 50 37"
+                fill="none"
+              >
+                <rect x="1" y="1" width="48" height="35" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+                <path d="M1 7 L25 20 L49 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" fill="none"/>
+              </svg>
+              <!-- Dots decoration -->
+              <svg style="position:absolute; right:-20px; bottom:10px;" width="40" height="30" viewBox="0 0 40 30">
+                <circle cx="5" cy="5" r="2.5" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="15" cy="5" r="2.5" fill="rgba(255,255,255,0.15)"/>
+                <circle cx="25" cy="5" r="2.5" fill="rgba(255,255,255,0.1)"/>
+                <circle cx="5" cy="15" r="2.5" fill="rgba(255,255,255,0.15)"/>
+                <circle cx="15" cy="15" r="2.5" fill="rgba(255,255,255,0.1)"/>
+                <circle cx="25" cy="15" r="2.5" fill="rgba(255,255,255,0.08)"/>
+                <circle cx="5" cy="25" r="2.5" fill="rgba(255,255,255,0.1)"/>
+                <circle cx="15" cy="25" r="2.5" fill="rgba(255,255,255,0.07)"/>
+              </svg>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="nl-content">
+            <h3>Subscribe to Newsletter</h3>
+            <p>Stay up to date with latest news and updates</p>
+            <div class="nl-form">
+              <input type="email" placeholder="Email Address" />
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OFFERS ============ -->
+    <section class="pad bg-gray">
+      <div class="wrap">
+        <h3 class="off-head">Exclusive Offers Just for You!</h3>
+        <div class="off-grid">
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+              alt=""
+              data-ph="Air fare"
+            />
+            <div class="cap">
+              <small>Student Special</small><b>AIR FARE</b>
+            </div>
+            <div class="overlay">
+              <p>
+                Get exclusive discounts on airfares for students. Book your
+                next adventure with special rates.
+              </p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+              alt=""
+              data-ph="Coxs Bazar"
+            />
+            <div class="cap">
+              <small style="color: #ffd23f;">Eid Special</small
+              ><b>SEAGULL</b><small>Hotel Cox's Bazar</small>
+            </div>
+            <div class="overlay">
+              <p>
+                Celebrate Eid with our special hotel packages at Seagull,
+                Cox's Bazar. Limited time offer available now.
+              </p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
+              alt=""
+              data-ph="Air ticket"
+            />
+            <div class="cap">
+              <small>Travel this Eid at</small
+              ><b style="color: #ffd23f;">lower cost</b
+              ><b style="font-size: 18px;">Air Ticket</b>
+            </div>
+            <div class="overlay">
+              <p>
+                Travel this Eid at the lowest possible cost. Book your air
+                tickets now and save big on your journey.
+              </p>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN / CONTACT ============ -->
+    <section class="pad" id="plan">
+      <div class="wrap">
+        <div class="plan-top">
+          <div>
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="h-display">
+              Let's plan your <span class="alt">next departure</span>
+            </h2>
+          </div>
+          <p>
+            Have questions about our packages or want to customize your own
+            tour? Our travel experts are here to help you craft the perfect
+            itinerary.
+          </p>
+        </div>
+        <div class="plan-grid">
+          <!-- Left info -->
+          <div>
+            <div class="info-card">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                    />
+                  </svg>
+                </div>
+                <b>Call Us</b>
+              </div>
+              <div class="info-grid">
+                <div class="it">
+                  <b>Air Ticketing</b><span>01730-716617</span>
+                </div>
+                <div class="it">
+                  <b>Visa Services</b><span>01730-716619</span>
+                </div>
+                <div class="it">
+                  <b>Tour Packages</b><span>01977-242404</span>
+                </div>
+                <div class="it">
+                  <b>Umrah Services</b><span>01329-680390</span>
+                </div>
+              </div>
+            </div>
+            <div class="info-card mail">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                </div>
+                <b>Email Us</b>
+              </div>
+              <a href="mailto:discoverholidaysltd@gmail.com"
+                >discoverholidaysltd@gmail.com</a
+              >
+              <small>We usually reply within 24 hours</small>
+            </div>
+            <div class="info-card addr">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                    />
+                  </svg>
+                </div>
+                <b>Visit at Office</b>
+              </div>
+              <p class="name">
+                <b>Discover Holidays LTD</b> — Siddique Tower, Level 5<br />49
+                Bir Uttam A.K. Khandakar Road<br />Mohakhali C/A, Dhaka-1212,
+                Bangladesh
+              </p>
+            </div>
+          </div>
+          <!-- Right form -->
+          <div class="form-card">
+            <h3>Request a Free Quote</h3>
+            <div class="sub">
+              For quick help, include your name, service, and travel date.
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Full name</label
+                ><input type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label>Phone</label
+                ><input type="text" placeholder="WhatsApp Number" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 18px">
+              <label>Email</label
+              ><input type="email" placeholder="Your Email" />
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Service</label>
+                <select>
+                  <option>Tour Package</option>
+                  <option>Air Ticketing</option>
+                  <option>Visa Services</option>
+                  <option>Umrah Package</option>
+                  <option>Corporate Tour</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Travel Date</label
+                ><input
+                  type="text"
+                  class="js-date"
+                  placeholder="DD/MM/YYYY"
+                />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 8px">
+              <label>Message</label
+              ><textarea
+                placeholder="Group Size, Destination, anything else..."
+              ></textarea>
+            </div>
+            <button class="btn btn-red">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="top">
+        <img
+          class="cloud"
+          style="left: 4%; top: 18%; width: 120px"
+          src="uploads/cloud1.png"
+          alt=""
+        />
+        <img
+          class="cloud"
+          style="right: 5%; bottom: 30%; width: 150px"
+          src="uploads/cloud2.png"
+          alt=""
+        />
+        <div class="wrap f-grid">
+          <div class="f-brand">
+            <div class="logo">
+              <img
+                src="assets/discover-holidays-logo.png"
+                alt="Discover Holidays LTD"
+                style="height: 50px"
+              />
+            </div>
+            <p>
+              Your Dhaka-based partner for group &amp; corporate tours, air
+              ticketing, visa processing and Umrah — trusted by 25,000+
+              travelers across 100+ destinations.
+            </p>
+            <div class="socials">
+              <a href="#" aria-label="Facebook">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H18V.2C17.6.1 16.4 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="WhatsApp">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.3-5-4.5-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="f-services">
+            <h5>Services</h5>
+            <div class="f-links">
+              <a href="packages.html">Tour Packages</a>
+              <a href="#">Air Ticketing</a>
+              <a href="visa.html">Visa Services</a>
+              <a href="umrah.html">Umrah Packages</a>
+              <a href="#">Corporate Tours</a>
+            </div>
+          </div>
+          <div class="f-office">
+            <h5>Visit our office</h5>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+              <span
+                >Discover Holidays LTD — Siddique Tower, Level 5, 9 Bir Uttam
+                A.K. Khandadar Road, Mohakhali C/A, Dhaka-1212, Bangladesh</span
+              >
+            </div>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                />
+              </svg>
+              <span
+                >01730-716617<br />discoverholidaysltd@gmail.com</span
+              >
+            </div>
+            <div class="accred" style="margin-top: 16px">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 20px;
+                  align-items: center;
+                "
+              >
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Accredited Member
+                  </div>
+                  <img
+                    src="uploads/accredation-01.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Civil Authority
+                  </div>
+                  <img
+                    src="uploads/accredation-03.png"
+                    alt="CAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    International
+                  </div>
+                  <img
+                    src="uploads/accredation-04.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Member Association
+                  </div>
+                  <img
+                    src="uploads/accredation1-01.png"
+                    alt="ATAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="wrap">
+          <div class="cr">
+            © 2026 | Discover Holidays LTD | All Rights Reserved
+          </div>
+          <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      /* Filter tab toggle */
+      document.querySelectorAll(".f-tab").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".f-tab")
+            .forEach(function (b) {
+              b.classList.remove("active");
+            });
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

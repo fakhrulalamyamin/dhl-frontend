@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inbound Tour — Discover Bangladesh | Discover Holidays LTD</title>
+    <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== INBOUND HERO ===== */
+      .inbound-hero {
+        position: relative;
+        min-height: 580px;
+        background: url("uploads/inbound-back.png") center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      .inbound-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.35) 0%,
+          rgba(0, 0, 0, 0.55) 60%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+      }
+      .inbound-hero-content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        max-width: 1200px;
+        padding: 80px 28px;
+      }
+      .inbound-hero-content h1 {
+        font-size: clamp(34px, 5.5vw, 60px);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+        margin-bottom: 18px;
+        line-height: 1.1;
+      }
+      .inbound-hero-content h1 .line1,
+      .inbound-hero-content h1 .line2 {
+        display: block;
+      }
+      .inbound-hero-content p {
+        font-size: 15.5px;
+        color: rgba(255, 255, 255, 0.92);
+        max-width: 560px;
+        margin: 0 auto 32px;
+        line-height: 1.7;
+      }
+
+      /* ===== WHY CHOOSE (inbound variant) ===== */
+      .inbound-why {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .inbound-feat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 28px;
+        margin: 28px 0 36px;
+      }
+      .inbound-feat {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .inbound-feat-ic {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .inbound-feat-ic.blue {
+        background: #e8f0ff;
+        color: #3b5bdb;
+      }
+      .inbound-feat-ic.amber {
+        background: #fff8e1;
+        color: #f59f00;
+      }
+      .inbound-feat-ic.cyan {
+        background: #e0f7fa;
+        color: #0097a7;
+      }
+      .inbound-feat-ic.green {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .inbound-feat h4 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: var(--ink);
+      }
+      .inbound-feat p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* Single image with plane decorations */
+      .inbound-single-img {
+        position: relative;
+      }
+      .inbound-single-img > img {
+        width: 100%;
+        height: 480px;
+        object-fit: contain;
+        display: block;
+      }
+      .plane-deco {
+        position: absolute;
+        z-index: 3;
+        color: #3b5bdb;
+        opacity: 0.7;
+      }
+      .plane-deco.tr {
+        top: -20px;
+        right: -20px;
+      }
+      .plane-deco.bl {
+        bottom: -20px;
+        left: -20px;
+        transform: rotate(180deg);
+      }
+
+      /* ===== SIGNATURE TOURS GRID (static 3-col) ===== */
+      .pkg-grid-static {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      @media (max-width: 1080px) {
+        .pkg-grid-static {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 680px) {
+        .pkg-grid-static {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .sig-head {
+        margin-bottom: 40px;
+      }
+      .sig-head-sub {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 6px;
+        max-width: 540px;
+      }
+
+      /* ===== TOP DESTINATIONS SLIDER ===== */
+      .dest-section {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .dest-left h2 {
+        font-size: clamp(22px, 3vw, 36px);
+        font-weight: 800;
+        line-height: 1.1;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      .dest-left h2 span {
+        color: var(--red);
+      }
+      .dest-left p {
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.75;
+        margin-bottom: 32px;
+      }
+      .dest-nav {
+        display: flex;
+        gap: 12px;
+      }
+      .dest-nav-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s;
+        flex-shrink: 0;
+      }
+      .dest-nav-btn:hover {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+      }
+
+      /* Slider right */
+      .dest-slider-wrap {
+        overflow: hidden;
+        border-radius: 6px;
+      }
+      .dest-slider-track {
+        display: flex;
+        gap: 16px;
+        transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .dest-card {
+        flex: 0 0 calc(50% - 8px);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 28px rgba(20, 20, 40, 0.09);
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .dest-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 44px rgba(20, 20, 40, 0.14);
+      }
+      .dest-card-img {
+        height: 190px;
+        overflow: hidden;
+      }
+      .dest-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        display: block;
+      }
+      .dest-card:hover .dest-card-img img {
+        transform: scale(1.06);
+      }
+      .dest-card-body {
+        padding: 13px 15px 14px;
+        background: #fff;
+        border: 1px solid #ececf0;
+        border-top: none;
+      }
+      .dest-card-body b {
+        font-size: 14px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 2px;
+      }
+      .dest-card-body small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 980px) {
+        .inbound-why,
+        .dest-section {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .inbound-single-img > img {
+          height: 340px;
+        }
+        .dest-card {
+          flex: 0 0 calc(80% - 8px);
+        }
+      }
+      @media (max-width: 680px) {
+        .inbound-feat-grid {
+          grid-template-columns: 1fr;
+        }
+        .dest-card {
+          flex: 0 0 calc(90% - 8px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/discover-holidays-logo.png"
+            alt="Discover Holidays LTD"
+          />
+        </a>
+        <nav class="menu" id="navmenu">
+          <a href="destination.html">Destination</a>
+          <a href="umrah.html">Umrah</a>
+          <div class="menu-item">
+            <a href="packages.html" class="dd-toggle"
+              >Package
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="dd">
+              <a href="packages.html">All Package</a>
+              <a href="#">Umrah Package</a>
+              <a href="inbound.html" style="color: var(--red)"
+                >Inbound Package</a
+              >
+              <a href="#">Corporate Group</a>
+            </div>
+          </div>
+          <a href="visa.html">Visa</a>
+          <a href="#">Air Ticket Offer</a>
+          <a href="blog.html">Blog</a>
+          <a href="about-us.html">About Us</a>
+          <a class="btn btn-red menu-cta" href="contact-us.html">Contact Us</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-red" href="contact-us.html">Contact Us</a>
+        </div>
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ INBOUND HERO ============ -->
+    <section class="inbound-hero" aria-label="Inbound Tour Bangladesh">
+      <div class="inbound-hero-content">
+        <h1>
+          <span class="line1">Discover Bangladesh:</span>
+          <span class="line2">Unforgettable Journeys</span>
+        </h1>
+        <p>
+          Curated experiences and local expertise for the modern explorer.<br />
+          Your Gateway to Authentic Bangladesh Adventures.
+        </p>
+        <a href="#signature-tours" class="btn btn-red">
+          Explore Tours
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="pad">
+      <div class="wrap inbound-why">
+        <!-- Left -->
+        <div>
+          <span class="eyebrow">Why Choose Us</span>
+          <h2 class="h-display">
+            We make your travel<span class="alt">experience unique</span>
+          </h2>
+          <p class="lead" style="margin-top: 10px">
+            We skip the boring parts (flights &amp; hotels) to focus on what
+            really matters: the experience. Our curated local tours ensure you
+            see the authentic side of every destination.
+          </p>
+
+          <div class="inbound-feat-grid">
+            <div class="inbound-feat">
+              <div class="inbound-feat-ic blue">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Local Experts</h4>
+                <p>
+                  Our guides are Bangladesh-natives, sharing hidden gems and
+                  stories you won't find in guidebooks.
+                </p>
+              </div>
+            </div>
+            <div class="inbound-feat">
+              <div class="inbound-feat-ic amber">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M9 11l3 3L22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Tailor-Made Itineraries</h4>
+                <p>
+                  We craft unique journeys based on your interests, pace, and
+                  travel style.
+                </p>
+              </div>
+            </div>
+            <div class="inbound-feat">
+              <div class="inbound-feat-ic cyan">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="1" y="3" width="15" height="13" rx="2" />
+                  <path
+                    d="M16 8h4l3 3v5h-7V8zM5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm13 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Seamless Logistics</h4>
+                <p>
+                  From airport transfers to accommodation and activities, we
+                  handle every detail so you can relax.
+                </p>
+              </div>
+            </div>
+            <div class="inbound-feat">
+              <div class="inbound-feat-ic green">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>24/7 Support</h4>
+                <p>
+                  Dedicated support throughout your entire trip in Bangladesh.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn btn-red" href="about-us.html">More About Us</a>
+        </div>
+
+        <!-- Right — Single Image -->
+        <div class="inbound-single-img">
+          <img src="uploads/inboundimg-01.png" alt="Bangladesh landscape" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIGNATURE TOURS ============ -->
+    <section class="pad bg-gray" id="signature-tours">
+      <div class="wrap">
+        <div class="sig-head">
+          <span class="eyebrow">Bangladesh Tours</span>
+          <h2 class="h-display">
+            Explore Our Signature<span class="alt">Tours</span>
+          </h2>
+          <p class="sig-head-sub">
+            Curated experiences and local expertise for the modern explorer.
+            Your Gateway to Authentic Bangladesh Adventures.
+          </p>
+        </div>
+
+        <div class="pkg-grid-static">
+          <!-- Card 1 — Eco-Tour -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="uploads/inboundimg-01.png"
+                alt="Eco-Tour in Bangladesh"
+              />
+              <span class="tag">Best Seller</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Eco-Tour in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >5 Days · 4 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >2–15 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >4★ Resort</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.9</b> (412 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,80,000</s> from
+                  <div class="now"><span class="tk">৳</span>1,49,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 — Agro-Based Tourism -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="uploads/inboundimg-02.png"
+                alt="Agro-Based Tourism in Bangladesh"
+              />
+              <span class="tag">Group Favourite</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Agro-Based Tourism in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >4 Days · 3 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >3–30 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >3★ Hotel</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.8</b> (286 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,60,000</s> from
+                  <div class="now"><span class="tk">৳</span>1,32,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 — Riverine & Wildlife -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="uploads/inboundimg-03.png"
+                alt="Riverine &amp; Wildlife Tour in Bangladesh"
+              />
+              <span class="tag">Price Included</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Riverine &amp; Wildlife Tour in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >3 Days · 2 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >7–30 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >4★ Resort</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.8</b> (204 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,20,000</s> from
+                  <div class="now"><span class="tk">৳</span>98,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="uploads/inboundimg-04.png"
+                alt="Eco-Tour in Bangladesh"
+              />
+              <span class="tag">Best Seller</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Eco-Tour in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >5 Days · 4 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >2–15 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >4★ Resort</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.9</b> (412 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,80,000</s> from
+                  <div class="now"><span class="tk">৳</span>1,49,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="uploads/inboundimg-05.png"
+                alt="Agro-Based Tourism in Bangladesh"
+              />
+              <span class="tag">Group Favourite</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Agro-Based Tourism in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >4 Days · 3 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >3–30 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >3★ Hotel</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.8</b> (286 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,60,000</s> from
+                  <div class="now"><span class="tk">৳</span>1,32,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="pkg">
+            <div class="top">
+              <img
+                src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=700&q=80"
+                alt="Riverine &amp; Wildlife Tour"
+              />
+              <span class="tag">Special Seller</span>
+              <span class="fav">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="body">
+              <div class="loc">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                  />
+                </svg>
+                Bangladesh
+              </div>
+              <h3>Riverine &amp; Wildlife Tour in Bangladesh</h3>
+              <div class="meta">
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                  >3 Days · 2 Nights</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M2 20c0-3 3.5-5 7-5s7 2 7 5" />
+                    <circle cx="17" cy="8" r="2.5" /></svg
+                  >7–30 pax</span
+                >
+                <span
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M2 12h20M4 12V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5M4 12v6M20 12v6"
+                    /></svg
+                  >4★ Resort</span
+                >
+              </div>
+              <div class="rate">
+                <span class="star">★</span><b>4.8</b> (204 reviews)
+              </div>
+              <div class="sep"></div>
+              <div class="foot">
+                <div class="price">
+                  <s>৳ 1,20,000</s> from
+                  <div class="now"><span class="tk">৳</span>98,000</div>
+                </div>
+                <a class="vp" href="#"
+                  >View package
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="center-btn">
+          <a class="btn btn-red" href="packages.html">View All Tour Packages</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOP DESTINATIONS SLIDER ============ -->
+    <section class="pad">
+      <div class="wrap">
+        <div class="dest-section">
+          <!-- Left text + nav -->
+          <div class="dest-left">
+            <h2>
+              Top 10 Must-Visit Tourist<br /><span>Destinations</span> in
+              Bangladesh
+            </h2>
+            <p>
+              Bangladesh, the land of rivers and lush green landscapes, has been
+              steadily emerging as a captivating tourist destination in South
+              Asia. From its world-famous beaches and ancient mangrove forests
+              to scenic tea gardens and pristine coral islands, the country
+              offers a diverse range of natural and cultural wonders.
+            </p>
+            <div class="dest-nav">
+              <button
+                class="dest-nav-btn"
+                id="destPrev"
+                aria-label="Previous destination"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                class="dest-nav-btn"
+                id="destNext"
+                aria-label="Next destination"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right slider -->
+          <div class="dest-slider-wrap">
+            <div class="dest-slider-track" id="destTrack">
+              <!-- Cox's Bazar -->
+              <div class="dest-card">
+                <div class="dest-card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80"
+                    alt="Cox's Bazar beach"
+                  />
+                </div>
+                <div class="dest-card-body">
+                  <b>Cox's Bazar</b>
+                  <small>The Endless Beach</small>
+                </div>
+              </div>
+              <!-- Sundarbans -->
+              <div class="dest-card">
+                <div class="dest-card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?auto=format&fit=crop&w=700&q=80"
+                    alt="Sundarbans mangrove forest"
+                  />
+                </div>
+                <div class="dest-card-body">
+                  <b>Sundarbans</b>
+                  <small>The Mangrove Forest</small>
+                </div>
+              </div>
+              <!-- Sylhet -->
+              <div class="dest-card">
+                <div class="dest-card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"
+                    alt="Sylhet tea gardens"
+                  />
+                </div>
+                <div class="dest-card-body">
+                  <b>Sylhet</b>
+                  <small>Tea Gardens</small>
+                </div>
+              </div>
+              <!-- Saint Martin's Island -->
+              <div class="dest-card">
+                <div class="dest-card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?auto=format&fit=crop&w=700&q=80"
+                    alt="Saint Martin's Island"
+                  />
+                </div>
+                <div class="dest-card-body">
+                  <b>Saint Martin's Island</b>
+                  <small>Coral Paradise</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OFFERS ============ -->
+    <section class="pad bg-gray">
+      <div class="wrap">
+        <h3 class="off-head">Exclusive Offers Just for You!</h3>
+        <div class="off-grid">
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap"><small>Student Special</small><b>AIR FARE</b></div>
+            <div class="overlay">
+              <p>
+                Get exclusive discounts on airfares for students. Book your next
+                adventure with special rates.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap">
+              <small style="color: #ffd23f">Eid Special</small><b>SEAGULL</b
+              ><small>Hotel Cox's Bazar</small>
+            </div>
+            <div class="overlay">
+              <p>
+                Celebrate Eid with our special hotel packages at Seagull, Cox's
+                Bazar. Limited time offer available now.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+          <div class="off">
+            <img
+              src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="cap">
+              <small>Travel this Eid at</small
+              ><b style="color: #ffd23f">lower cost</b
+              ><b style="font-size: 18px">Air Ticket</b>
+            </div>
+            <div class="overlay">
+              <p>
+                Travel this Eid at the lowest possible cost. Book your air
+                tickets now and save big on your journey.
+              </p>
+              <a class="btn" href="#plan">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN / CONTACT ============ -->
+    <section class="pad" id="plan">
+      <div class="wrap">
+        <div class="plan-top">
+          <div>
+            <span class="eyebrow">Get in Touch</span>
+            <h2 class="h-display">
+              Let's plan your<span class="alt">next departure</span>
+            </h2>
+          </div>
+          <p>
+            Have questions about our packages or want to customize your own
+            tour? Our travel experts are here to help you craft the perfect
+            itinerary.
+          </p>
+        </div>
+        <div class="plan-grid">
+          <div>
+            <div class="info-card">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                    />
+                  </svg>
+                </div>
+                <b>Call Us</b>
+              </div>
+              <div class="info-grid">
+                <div class="it">
+                  <b>Air Ticketing</b><span>01730-716617</span>
+                </div>
+                <div class="it">
+                  <b>Visa Services</b><span>01730-716619</span>
+                </div>
+                <div class="it">
+                  <b>Tour Packages</b><span>01977-242404</span>
+                </div>
+                <div class="it">
+                  <b>Umrah Services</b><span>01329-680390</span>
+                </div>
+              </div>
+            </div>
+            <div class="info-card mail">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                </div>
+                <b>Email Us</b>
+              </div>
+              <a href="mailto:discoverholidaysltd@gmail.com"
+                >discoverholidaysltd@gmail.com</a
+              >
+              <small>We usually reply within 24 hours</small>
+            </div>
+            <div class="info-card addr">
+              <div class="info-head">
+                <div class="ic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                    />
+                  </svg>
+                </div>
+                <b>Visit at Office</b>
+              </div>
+              <p class="name">
+                <b>Discover Holidays LTD</b> — Siddique Tower, Level 5<br />49
+                Bir Uttam A.K. Khandakar Road<br />Mohakhali C/A, Dhaka-1212,
+                Bangladesh
+              </p>
+            </div>
+          </div>
+          <div class="form-card">
+            <h3>Request a Free Quote</h3>
+            <div class="sub">
+              For quick help, include your name, service, and travel date.
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Full name</label
+                ><input type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label>Phone</label
+                ><input type="text" placeholder="WhatsApp Number" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 18px">
+              <label>Email</label
+              ><input type="email" placeholder="Your Email" />
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Service</label>
+                <select>
+                  <option>Inbound Tour</option>
+                  <option>Tour Package</option>
+                  <option>Air Ticketing</option>
+                  <option>Visa Services</option>
+                  <option>Umrah Package</option>
+                  <option>Corporate Tour</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Travel Date</label
+                ><input type="text" class="js-date" placeholder="DD/MM/YYYY" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 8px">
+              <label>Message</label>
+              <textarea
+                placeholder="Group Size, Destination, anything else..."
+              ></textarea>
+            </div>
+            <button class="btn btn-red">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="top">
+        <img
+          class="cloud"
+          style="left: 4%; top: 18%; width: 120px"
+          src="uploads/cloud1.png"
+          alt=""
+        />
+        <img
+          class="cloud"
+          style="right: 5%; bottom: 30%; width: 150px"
+          src="uploads/cloud2.png"
+          alt=""
+        />
+        <div class="wrap f-grid">
+          <div class="f-brand">
+            <div class="logo">
+              <img
+                src="assets/discover-holidays-logo.png"
+                alt="Discover Holidays LTD"
+                style="height: 50px"
+              />
+            </div>
+            <p>
+              Your Dhaka-based partner for group &amp; corporate tours, air
+              ticketing, visa processing and Umrah — trusted by 25,000+
+              travelers across 100+ destinations.
+            </p>
+            <div class="socials">
+              <a href="#" aria-label="Facebook">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H18V.2C17.6.1 16.4 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="WhatsApp">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.3-5-4.5-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="f-services">
+            <h5>Services</h5>
+            <div class="f-links">
+              <a href="packages.html">Tour Packages</a>
+              <a href="#">Air Ticketing</a>
+              <a href="visa.html">Visa Services</a>
+              <a href="umrah.html">Umrah Packages</a>
+              <a href="#">Corporate Tours</a>
+            </div>
+          </div>
+          <div class="f-office">
+            <h5>Visit our office</h5>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+              <span
+                >Discover Holidays LTD — Siddique Tower, Level 5, 9 Bir Uttam
+                A.K. Khandakar Road, Mohakhali C/A, Dhaka-1212, Bangladesh</span
+              >
+            </div>
+            <div class="row">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"
+                />
+              </svg>
+              <span
+                >01730-716617<br /><a
+                  href="mailto:discoverholidaysltd@gmail.com"
+                  >discoverholidaysltd@gmail.com</a
+                ></span
+              >
+            </div>
+            <div class="accred" style="margin-top: 16px">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 20px;
+                  align-items: center;
+                "
+              >
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Accredited Member
+                  </div>
+                  <img
+                    src="uploads/accredation-01.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Civil Authority
+                  </div>
+                  <img
+                    src="uploads/accredation-03.png"
+                    alt="CAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    International
+                  </div>
+                  <img
+                    src="uploads/accredation-04.png"
+                    alt="IATA"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 11px;
+                      font-weight: 700;
+                      color: rgba(255, 255, 255, 0.7);
+                      text-transform: uppercase;
+                      margin-bottom: 10px;
+                      letter-spacing: 0.05em;
+                    "
+                  >
+                    Member Association
+                  </div>
+                  <img
+                    src="uploads/accredation1-01.png"
+                    alt="ATAB"
+                    style="height: 32px; object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="wrap">
+          <div class="cr">
+            © 2026 | Discover Holidays LTD | All Rights Reserved
+          </div>
+          <div class="legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ YOUTUBE MODAL ============ -->
+    <div
+      class="yt-modal"
+      id="ytModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video"
+    >
+      <div class="yt-modal-inner">
+        <button class="yt-close" id="ytClose" aria-label="Close video">
+          &times;
+        </button>
+        <div class="yt-frame-wrap">
+          <iframe
+            id="ytFrame"
+            src=""
+            title="Video"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+      /* ===== Destination slider ===== */
+      (function () {
+        var track = document.getElementById("destTrack");
+        if (!track) return;
+        var cards = track.children;
+        var total = cards.length;
+        var cur = 0;
+        var visibleCount = 2;
+
+        function getCardWidth() {
+          return cards[0].offsetWidth + 16; // card + gap
+        }
+
+        function update() {
+          var max = total - visibleCount;
+          cur = Math.max(0, Math.min(cur, max));
+          track.style.transform = "translateX(-" + cur * getCardWidth() + "px)";
+          document.getElementById("destPrev").style.opacity =
+            cur === 0 ? "0.4" : "1";
+          document.getElementById("destNext").style.opacity =
+            cur >= max ? "0.4" : "1";
+        }
+
+        document
+          .getElementById("destPrev")
+          .addEventListener("click", function () {
+            cur--;
+            update();
+          });
+        document
+          .getElementById("destNext")
+          .addEventListener("click", function () {
+            cur++;
+            update();
+          });
+
+        update();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,13 +1,16 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3 Nights Luxury Sea View Retreat – Discover Holidays LTD</title>
+    <title>Visa Services — Discover Holidays LTD</title>
+    <link rel="icon" type="image/png" href="./assets/images/fabicon.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
@@ -21,10 +24,10 @@
           />
         </a>
         <nav class="menu" id="navmenu">
-          <a href="#">Destination</a>
+          <a href="destination.html">Destination</a>
           <a href="umrah.html">Umrah</a>
           <div class="menu-item">
-            <a href="#" class="dd-toggle"
+            <a href="packages.html" class="dd-toggle"
               >Package
               <svg
                 width="13"
@@ -46,7 +49,7 @@
               <a href="#">Corporate Group</a>
             </div>
           </div>
-          <a href="visa.html">Visa</a>
+          <a href="visa.html" style="color: var(--red)">Visa</a>
           <a href="#">Air Ticket Offer</a>
           <a href="blog.html">Blog</a>
           <a href="about-us.html">About Us</a>
@@ -65,87 +68,206 @@
       </div>
     </header>
 
-    <!-- ============ PACKAGE DETAIL HERO ============ -->
-    <section class="pd-hero">
-      <div class="pd-hero-overlay"></div>
-      <div class="wrap pd-hero-inner">
-        <nav class="pd-breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <a href="#">Maldives</a>
-          <span>/</span>
-          <span>Maldives Island Tour</span>
-        </nav>
-        <div class="pd-hero-bottom">
-          <div class="pd-hero-info">
-            <h1 class="pd-hero-title">3 Nights Luxury Sea View Retreat</h1>
-            <div class="pd-hero-loc">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
-                />
-              </svg>
-              Maldives, Maldives
-            </div>
-            <div class="pd-hero-stars">
-              <span class="stars">★★★★★</span>
-              <span class="rating-val">4.98</span>
-            </div>
-          </div>
-          <div class="pd-hero-price-box">
-            <span class="pd-per-label">Per person cost</span>
-            <div class="pd-price-big">
-              ৳25,000 <span class="pd-cur">BDT</span>
-            </div>
-            <a href="#book-form" class="btn btn-red pd-book-btn"
-              >Book Your Tour</a
-            >
-          </div>
+    <!-- ============ VISA HERO ============ -->
+    <section class="visa-hero">
+      <div class="wrap visa-hero-inner">
+        <!-- Text -->
+        <div class="visa-hero-copy">
+          <p class="pre-label">Solution All Types of</p>
+          <h1>Immigration &amp; <span>Visa</span><br />Consultancy</h1>
+          <a href="#visa-search" class="btn btn-outline">Explore Our Service</a>
+        </div>
+        <!-- Image Mosaic -->
+        <div class="visa-img-mosaic">
+          <img src="uploads/visa-01.png" alt="Visa destination" />
+          <img src="uploads/visa-02.png" alt="Travel documents" />
+          <img src="uploads/visa-03.png" alt="Visa consultancy" />
         </div>
       </div>
     </section>
 
-    <!-- ============ GALLERY ============ -->
-    <div class="wrap pd-gallery">
-      <div class="pd-gallery-main">
-        <img
-          src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80"
-          alt="Maldives aerial view"
-        />
-      </div>
-      <div class="pd-gallery-grid">
-        <img
-          src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=440&q=80"
-          alt="Maldives overwater bungalow"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=440&q=80"
-          alt="Maldives villa"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=440&q=80"
-          alt="Maldives beach"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1439130490301-25e322d88054?auto=format&fit=crop&w=440&q=80"
-          alt="Maldives ocean view"
-        />
+    <!-- ============ VISA SEARCH BAR ============ -->
+    <div class="wrap visa-search-wrap" id="visa-search">
+      <div class="visa-search-bar">
+        <!-- Destination -->
+        <div class="visa-search-field">
+          <span class="visa-sf-label">Destination</span>
+          <div class="visa-sf-value">
+            <span class="flag-code" id="vs-flag">TH</span>
+            <span class="vs-display" id="vs-country-display">Thailand</span>
+            <svg
+              class="vs-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <select id="vs-country" class="vs-native-select">
+            <option value="Thailand" data-code="TH">Thailand</option>
+            <option value="Malaysia" data-code="MY">Malaysia</option>
+            <option value="Singapore" data-code="SG">Singapore</option>
+            <option value="Dubai (UAE)" data-code="AE">Dubai (UAE)</option>
+            <option value="Turkey" data-code="TR">Turkey</option>
+            <option value="Indonesia" data-code="ID">Indonesia</option>
+            <option value="Vietnam" data-code="VN">Vietnam</option>
+            <option value="India" data-code="IN">India</option>
+            <option value="China" data-code="CN">China</option>
+            <option value="United Kingdom" data-code="UK">
+              United Kingdom
+            </option>
+            <option value="Schengen (Europe)" data-code="EU">
+              Schengen (Europe)
+            </option>
+            <option value="USA" data-code="US">USA</option>
+            <option value="Canada" data-code="CA">Canada</option>
+            <option value="Australia" data-code="AU">Australia</option>
+          </select>
+        </div>
+
+        <div class="visa-search-sep"></div>
+
+        <!-- Date -->
+        <div class="visa-search-field" id="vs-date-field">
+          <span class="visa-sf-label">Date</span>
+          <div class="visa-sf-value">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+            <span class="vs-display" id="vs-date-display">Select date</span>
+            <svg
+              class="vs-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <input
+            type="date"
+            id="vs-date"
+            style="
+              position: absolute;
+              opacity: 0;
+              pointer-events: none;
+              width: 0;
+              height: 0;
+            "
+          />
+        </div>
+
+        <div class="visa-search-sep"></div>
+
+        <!-- Visa Type -->
+        <div class="visa-search-field">
+          <span class="visa-sf-label">Visa Type</span>
+          <div class="visa-sf-value">
+            <span class="vs-display" id="vs-type-display">Tourist Visa</span>
+            <svg
+              class="vs-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <select id="vs-type" class="vs-native-select">
+            <option>Tourist Visa</option>
+            <option>Business Visa</option>
+            <option>Student Visa</option>
+            <option>Work Visa</option>
+            <option>Medical Visa</option>
+            <option>Transit Visa</option>
+            <option>On Arrival Visa</option>
+          </select>
+        </div>
+
+        <div class="visa-search-sep"></div>
+
+        <!-- Travellers -->
+        <div class="visa-search-field">
+          <span class="visa-sf-label">Traveller</span>
+          <div class="visa-sf-value">
+            <span class="vs-display" id="vs-travellers-display"
+              >1 Traveller</span
+            >
+            <svg
+              class="vs-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <select id="vs-travellers" class="vs-native-select">
+            <option value="1">1 Traveller</option>
+            <option value="2">2 Travellers</option>
+            <option value="3">3 Travellers</option>
+            <option value="4">4 Travellers</option>
+            <option value="5+">5+ Travellers</option>
+          </select>
+        </div>
+
+        <!-- Search Button -->
+        <button class="visa-search-btn" aria-label="Search">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <!-- ============ MAIN CONTENT ============ -->
-    <main class="wrap pd-layout">
-      <!-- LEFT: Accordions -->
+    <!-- ============ MAIN CONTENT + SIDEBAR ============ -->
+    <main class="wrap pd-layout" style="padding-top: 8px; padding-bottom: 0">
+      <!-- LEFT: Visa Requirements Accordions -->
       <div class="pd-main">
-        <!-- Highlights -->
+        <!-- Common For All -->
         <div class="accordion-item open">
           <button class="accordion-header">
-            Highlights
+            Common For All
             <svg
               class="acc-icon"
               width="18"
@@ -161,24 +283,22 @@
           </button>
           <div class="accordion-body">
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat.
+              1. Passport with 7-month Validity (All PP) 2 copy photo (35×45mm),
+              white Background, Without glasses, Lab print, Within 03 months.
             </p>
             <p>
-              Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-              esse molestie consequat, vel illum dolore eu feugiat nulla
-              facilisis at vero eros et accumsan et iusto odio dignissim qui
-              blandit praesent.
+              2. Bank Statement with Bank Solvency (last 07 month) Minimum
+              Balance 1,00,000/- Per Person.
             </p>
+            <p>3. Press Printed Visiting card.</p>
+            <p>4. Utility bill copy.</p>
           </div>
         </div>
 
+        <!-- For Employee -->
         <div class="accordion-item">
           <button class="accordion-header">
-            Itinerary
+            For Employee
             <svg
               class="acc-icon"
               width="18"
@@ -193,29 +313,16 @@
             </svg>
           </button>
           <div class="accordion-body">
-            <p>
-              <strong>Day 1:</strong> Arrival at Malé International Airport.
-              Transfer to resort by speedboat. Check-in and welcome
-              refreshments. Evening sunset cruise.
-            </p>
-            <p>
-              <strong>Day 2:</strong> Snorkeling trip to reef. Water sports
-              activities. Sunset fishing excursion.
-            </p>
-            <p>
-              <strong>Day 3:</strong> Spa morning. Island hopping tour. Farewell
-              dinner on the beach.
-            </p>
-            <p>
-              <strong>Day 4:</strong> Breakfast. Check-out and transfer back to
-              airport.
-            </p>
+            <p>1. No Objection Certificate from Company.</p>
+            <p>2. Office ID card both side color copy.</p>
+            <p>3. Salary Bank statement/Salary Pay Slip/Salary certificate.</p>
           </div>
         </div>
 
+        <!-- For Businessman -->
         <div class="accordion-item">
           <button class="accordion-header">
-            Pickup Notes
+            For Businessman
             <svg
               class="acc-icon"
               width="18"
@@ -231,149 +338,10 @@
           </button>
           <div class="accordion-body">
             <p>
-              Pickup from Malé International Airport (MLE). Our representative
-              will be holding a placard with your name. Please carry a printed
-              copy of your booking confirmation. Speedboat transfer to the
-              resort takes approximately 45 minutes.
+              1. Updated Trade License Bangla Copy with English Translation +
+              Articles of Memorandum (if need).
             </p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-header">
-            Cancellation Policy
-            <svg
-              class="acc-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div class="accordion-body">
-            <ul>
-              <li>Free cancellation up to 30 days before departure.</li>
-              <li>50% refund for cancellations 15–29 days before departure.</li>
-              <li>No refund for cancellations within 14 days of departure.</li>
-              <li>
-                Date changes permitted up to 21 days before departure (subject
-                to availability).
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-header">
-            Tax
-            <svg
-              class="acc-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div class="accordion-body">
-            <p>
-              All prices include applicable government taxes and tourism levies.
-              Maldives Green Tax (USD 6 per person/night) is included in the
-              package price. No hidden charges.
-            </p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-header">
-            Included Services
-            <svg
-              class="acc-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div class="accordion-body">
-            <ul>
-              <li>✓ 3 nights accommodation in overwater villa</li>
-              <li>✓ Daily breakfast & dinner (half-board)</li>
-              <li>✓ Airport speedboat transfers (both ways)</li>
-              <li>✓ Snorkeling equipment</li>
-              <li>✓ Guided reef snorkeling tour</li>
-              <li>✓ Sunset cruise</li>
-              <li>✓ All taxes & service charges</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-header">
-            Excluded Services
-            <svg
-              class="acc-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div class="accordion-body">
-            <ul>
-              <li>✗ International airfare from Bangladesh</li>
-              <li>✗ Visa fees</li>
-              <li>✗ Lunch & beverages</li>
-              <li>✗ Personal travel insurance</li>
-              <li>✗ Optional water sports activities</li>
-              <li>✗ Spa treatments</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="accordion-item" style="border-bottom: none">
-          <button class="accordion-header">
-            General Conditions
-            <svg
-              class="acc-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div class="accordion-body">
-            <p>
-              Package rates are per person based on double occupancy. Single
-              supplement applies for solo travelers. Children under 3 years stay
-              free (no extra bed). All itineraries are subject to weather and
-              sea conditions. Discover Holidays LTD reserves the right to modify
-              the itinerary in case of unforeseen circumstances.
-            </p>
+            <p>2. Press Printed Visiting Card &amp; Company Pad.</p>
           </div>
         </div>
 
@@ -381,7 +349,7 @@
         <section class="custom-plan-banner wrap">
           <div class="banner-content">
             <h2>
-              <span class="plan-holiday">Plan holiday, Your Way!</span> <br />
+              <span class="plan-holiday">Plan Holiday, Your Way!</span><br />
               Need a Customised Tour Plan?
             </h2>
             <a href="custom-service.html" class="btn-primary">Get a Free Quote</a>
@@ -392,7 +360,7 @@
 
       <!-- RIGHT: Sidebar -->
       <aside class="pd-sidebar">
-        <!-- Booking Form Card -->
+        <!-- WhatsApp Booking Card -->
         <div class="pd-booking-card" id="book-form">
           <div class="pd-wa-icon-wrap">
             <svg
@@ -415,7 +383,7 @@
             instant answers, custom quotes, and easy booking.
           </p>
           <a
-            href="https://wa.me/8801977242404?text=Hi%2C%20I'm%20interested%20in%20booking%20a%20tour.%20Can%20you%20help%20me%3F"
+            href="https://wa.me/8801730716619?text=Hi%2C%20I'm%20interested%20in%20a%20visa%20service.%20Can%20you%20help%20me%3F"
             target="_blank"
             rel="noopener noreferrer"
             class="pd-wa-btn"
@@ -449,39 +417,18 @@
           </div>
         </div>
 
-        <!-- Upsell Package Cards -->
-        <div class="pd-upsell-label">You might also like</div>
-        <a href="package-details.html" class="pd-upsell-card">
-          <img
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80"
-            alt="Switzerland Alps Tour"
-            class="pd-upsell-img"
-          />
-          <div class="pd-upsell-body">
-            <span class="pd-upsell-tag">Popular</span>
-            <h5 class="pd-upsell-title">5 Nights Switzerland Alps Tour</h5>
-            <div class="pd-upsell-foot">
-              <span class="pd-upsell-price">৳85,000</span>
-              <span class="pd-upsell-nights">5N / 6D</span>
-            </div>
+        <!-- Visa Guidance Card -->
+        <div class="visa-guidance-card">
+          <h4 class="visa-guidance-title">Need Expert Visa Guidance?</h4>
+          <p class="visa-guidance-desc">
+            Don't know where to begin? Share your details, and our experienced
+            visa consultants will assist you on every step.
+          </p>
+          <div class="visa-guidance-foot">
+            <a href="contact-us.html" class="visa-quote-btn">Request a Quote</a>
+            <span class="visa-phone">01730-716619</span>
           </div>
-        </a>
-        <a href="package-details.html" class="pd-upsell-card">
-          <img
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80"
-            alt="Dubai City &amp; Desert Safari"
-            class="pd-upsell-img"
-          />
-          <div class="pd-upsell-body">
-            <span class="pd-upsell-tag pd-upsell-tag--deal">Best Deal</span>
-            <h5 class="pd-upsell-title">Dubai City &amp; Desert Safari</h5>
-            <div class="pd-upsell-foot">
-              <span class="pd-upsell-price">৳42,000</span>
-              <span class="pd-upsell-nights">4N / 5D</span>
-            </div>
-          </div>
-        </a>
-
+        </div>
       </aside>
     </main>
 
@@ -612,8 +559,8 @@
                 </div>
                 <b>Email Us</b>
               </div>
-              <a href="mailto:discoveryholidaysltd@gmail.com"
-                >discoveryholidaysltd@gmail.com</a
+              <a href="mailto:discoverholidaysltd@gmail.com"
+                >discoverholidaysltd@gmail.com</a
               >
               <small>We usually reply within 24 hours</small>
             </div>
@@ -663,9 +610,9 @@
               <div class="field">
                 <label>Service</label>
                 <select>
+                  <option>Visa Services</option>
                   <option>Tour Package</option>
                   <option>Air Ticketing</option>
-                  <option>Visa Services</option>
                   <option>Umrah Package</option>
                   <option>Corporate Tour</option>
                 </select>
@@ -717,8 +664,8 @@
               travelers across 100+ destinations.
             </p>
             <div class="socials">
-              <a href="#" aria-label="Facebook"
-                ><svg
+              <a href="#" aria-label="Facebook">
+                <svg
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -726,10 +673,11 @@
                 >
                   <path
                     d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H18V.2C17.6.1 16.4 0 15 0c-2.7 0-4.5 1.6-4.5 4.6V6H8v3h2.5v9H14z"
-                  /></svg
-              ></a>
-              <a href="#" aria-label="Instagram"
-                ><svg
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -745,10 +693,11 @@
                     r="1"
                     fill="currentColor"
                     stroke="none"
-                  /></svg
-              ></a>
-              <a href="#" aria-label="YouTube"
-                ><svg
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -756,10 +705,11 @@
                 >
                   <path
                     d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"
-                  /></svg
-              ></a>
-              <a href="#" aria-label="WhatsApp"
-                ><svg
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="WhatsApp">
+                <svg
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -767,8 +717,9 @@
                 >
                   <path
                     d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.3-5-4.5-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"
-                  /></svg
-              ></a>
+                  />
+                </svg>
+              </a>
             </div>
           </div>
           <div class="f-services">
@@ -812,8 +763,8 @@
               </svg>
               <span
                 >01730-716617<br /><a
-                  href="mailto:discoveryholidaysltd@gmail.com"
-                  >discoveryholidaysltd@gmail.com</a
+                  href="mailto:discoverholidaysltd@gmail.com"
+                  >discoverholidaysltd@gmail.com</a
                 ></span
               >
             </div>
@@ -924,7 +875,7 @@
 
     <script src="js/script.js"></script>
     <script>
-      // ---- Accordion ----
+      // Accordion
       document.querySelectorAll(".accordion-header").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var item = btn.closest(".accordion-item");
@@ -942,17 +893,71 @@
         });
       });
 
-      // ---- Guest counters ----
-      document.querySelectorAll(".pd-cnt-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var target = btn.dataset.target;
-          var dir = parseInt(btn.dataset.dir);
-          var el = document.getElementById(target);
-          var val = parseInt(el.textContent) + dir;
-          if (val < 0) val = 0;
-          el.textContent = val;
+      // Search bar — sync hidden selects to display spans
+      var vsCountry = document.getElementById("vs-country");
+      var vsType = document.getElementById("vs-type");
+      var vsTravellers = document.getElementById("vs-travellers");
+      var vsDate = document.getElementById("vs-date");
+
+      if (vsCountry) {
+        vsCountry.addEventListener("change", function () {
+          var opt = this.options[this.selectedIndex];
+          document.getElementById("vs-country-display").textContent = opt.value;
+          document.getElementById("vs-flag").textContent =
+            opt.dataset.code || "—";
         });
-      });
+      }
+      if (vsType) {
+        vsType.addEventListener("change", function () {
+          document.getElementById("vs-type-display").textContent = this.value;
+        });
+      }
+      if (vsTravellers) {
+        vsTravellers.addEventListener("change", function () {
+          document.getElementById("vs-travellers-display").textContent =
+            this.value;
+        });
+      }
+      if (vsDate) {
+        vsDate.addEventListener("change", function () {
+          if (!this.value) return;
+          var d = new Date(this.value + "T00:00:00");
+          var months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          var display =
+            months[d.getMonth()] +
+            " " +
+            String(d.getDate()).padStart(2, "0") +
+            ", " +
+            days[d.getDay()] +
+            " " +
+            d.getFullYear();
+          document.getElementById("vs-date-display").textContent = display;
+        });
+        // Clicking anywhere on the date field opens the calendar
+        document
+          .getElementById("vs-date-field")
+          .addEventListener("click", function () {
+            try {
+              vsDate.showPicker();
+            } catch (e) {
+              vsDate.focus();
+            }
+          });
+      }
     </script>
   </body>
 </html>
