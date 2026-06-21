@@ -3347,7 +3347,8 @@ footer .bottom .cr {
   .values-grid {
     grid-template-columns: 1fr;
   }
-  .leader {
+  .leader,
+  .leader.reverse {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -3358,9 +3359,15 @@ footer .bottom .cr {
   .leadership-sec {
     gap: 48px;
   }
+  .leader-photo {
+    width: 200px;
+  }
   .leader-content h3 {
     font-size: 22px;
     margin-bottom: 14px;
+  }
+  .about-sec h2 {
+    font-size: 30px;
   }
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3383,17 +3390,23 @@ footer .bottom .cr {
     grid-template-columns: 1fr;
   }
   .why-stats {
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   .why-stats .ws b {
-    font-size: 24px;
+    font-size: 22px;
   }
   .why-stats .ws small {
-    font-size: 10.5px;
+    font-size: 10px;
     letter-spacing: 0;
+    text-transform: none;
   }
   .leadership-sec {
     gap: 36px;
+  }
+  .leader-photo {
+    width: 160px;
   }
   .leader-content h3 {
     font-size: 20px;
