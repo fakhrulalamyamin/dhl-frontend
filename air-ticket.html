@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -38,7 +38,7 @@
             </div>
           </div>
           <a href="visa.html">Visa</a>
-          <a href="air-ticket.html" style="color:var(--red)">Air Ticket Offer</a>
+          <a href="air-ticket.html" class="text-[var(--red)]">Air Ticket Offer</a>
           <a href="blog.html">Blog</a>
           <a href="about-us.html">About Us</a>
           <a class="btn btn-red menu-cta" href="contact-us.html">Contact Us</a>
@@ -76,7 +76,7 @@
     <section class="at-search-sec" id="at-search">
       <div class="wrap">
         <h2>Plan Your Journey</h2>
-        <p class="at-search-sub">Easy search and book your flights<br>in any Air Line</p>
+        <p class="text-center text-brand-muted text-[14.5px] leading-[1.7] mb-9">Easy search and book your flights<br>in any Air Line</p>
         <div class="at-search-bar">
           <div class="sb-field">
             <label>Flight Type</label>
@@ -136,7 +136,7 @@
                 <span class="price-label-text">Minimum Price</span>
                 <span class="price-val" id="atMinVal">25000</span>
               </div>
-              <div class="price-label-col price-label-right">
+              <div class="price-label-col text-right">
                 <span class="price-label-text">Maximum Price</span>
                 <span class="price-val" id="atMaxVal">350000</span>
               </div>
@@ -261,7 +261,7 @@
             <div class="fc-acc-pane" id="bag1">
               Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
             </div>
-            <div class="fc-acc-pane" id="pol1" style="display:none">
+            <div class="fc-acc-pane hidden" id="pol1">
               Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees. Changes must be requested at least 24 hours before departure. No-show forfeits the entire fare.
             </div>
           </div>
@@ -330,7 +330,7 @@
             <div class="fc-acc-pane" id="bag2">
               Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
             </div>
-            <div class="fc-acc-pane" id="pol2" style="display:none">
+            <div class="fc-acc-pane hidden" id="pol2">
               Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees. Changes must be requested at least 24 hours before departure.
             </div>
           </div>
@@ -395,7 +395,7 @@
             <div class="fc-acc-pane" id="bag3">
               Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
             </div>
-            <div class="fc-acc-pane" id="pol3" style="display:none">
+            <div class="fc-acc-pane hidden" id="pol3">
               Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
             </div>
           </div>
@@ -460,7 +460,7 @@
             <div class="fc-acc-pane" id="bag4">
               Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
             </div>
-            <div class="fc-acc-pane" id="pol4" style="display:none">
+            <div class="fc-acc-pane hidden" id="pol4">
               Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
             </div>
           </div>
@@ -525,7 +525,7 @@
             <div class="fc-acc-pane" id="bag5">
               Baggage policies vary significantly by airline, class of service, and destination. Generally carry-on limits are 7 kg–10 kg with specific dimensions, while checked bags range from 20 kg–30 kg for domestic or international flights.
             </div>
-            <div class="fc-acc-pane" id="pol5" style="display:none">
+            <div class="fc-acc-pane hidden" id="pol5">
               Tickets are non-refundable. Date change may be allowed subject to availability and applicable fees.
             </div>
           </div>
@@ -549,9 +549,9 @@
     </div><!-- /at-layout -->
 
     <!-- ============ EXCLUSIVE OFFERS ============ -->
-    <section class="pad bg-gray">
+    <section class="pad bg-brand-gray">
       <div class="wrap">
-        <h3 class="off-head">Exclusive Offers Just for You!</h3>
+        <h3 class="text-center text-2xl font-bold mb-9">Exclusive Offers Just for You!</h3>
         <div class="off-grid">
           <div class="off">
             <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Student Air Fare" />
@@ -567,7 +567,7 @@
           <div class="off">
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Eid Special Cox's Bazar" />
             <div class="cap">
-              <small style="color:#ffd23f">Eid Special</small>
+              <small class="text-[#ffd23f]">Eid Special</small>
               <b>SEAGULL</b>
               <small>Hotel Cox's Bazar</small>
             </div>
@@ -580,8 +580,8 @@
             <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80" alt="Lower Cost Air Ticket" />
             <div class="cap">
               <small>Travel this Eid at</small>
-              <b style="color:#ffd23f">lower cost</b>
-              <b style="font-size:18px">Air Ticket</b>
+              <b class="text-[#ffd23f]">lower cost</b>
+              <b class="text-[18px]">Air Ticket</b>
             </div>
             <div class="overlay">
               <p>Travel this Eid at the lowest possible cost. Book your air tickets now and save big.</p>
@@ -662,7 +662,7 @@
                 <label>Phone</label><input type="text" placeholder="WhatsApp Number" />
               </div>
             </div>
-            <div class="field" style="margin-bottom:18px">
+            <div class="field mb-4.5">
               <label>Email</label><input type="email" placeholder="Your Email" />
             </div>
             <div class="frow">
@@ -680,7 +680,7 @@
                 <label>Travel Date</label><input type="text" placeholder="DD/MM/YYYY" />
               </div>
             </div>
-            <div class="field" style="margin-bottom:8px">
+            <div class="field mb-2">
               <label>Message</label>
               <textarea placeholder="Group Size, Destination, anything else..."></textarea>
             </div>
@@ -693,12 +693,12 @@
     <!-- ============ FOOTER ============ -->
     <footer>
       <div class="top">
-        <img class="cloud" style="left:4%;top:18%;width:120px" src="uploads/cloud1.png" alt="" />
-        <img class="cloud" style="right:5%;bottom:30%;width:150px" src="uploads/cloud2.png" alt="" />
+        <img class="cloud left-[4%] top-[18%] w-30" src="uploads/cloud1.png" alt="" />
+        <img class="cloud right-[5%] bottom-[30%] w-37.5" src="uploads/cloud2.png" alt="" />
         <div class="wrap f-grid">
           <div class="f-brand">
             <div class="logo">
-              <img src="assets/discover-holidays-logo.png" alt="Discover Holidays LTD" style="height:50px" />
+              <img src="assets/discover-holidays-logo.png" alt="Discover Holidays LTD" class="h-12.5" />
             </div>
             <p>Your Dhaka-based partner for group &amp; corporate tours, air ticketing, visa processing and Umrah — trusted by 25,000+ travelers across 100+ destinations.</p>
             <div class="socials">
@@ -739,23 +739,23 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1z"/></svg>
               <span>01730-716617<br><a href="mailto:discoverholidaysltd@gmail.com">discoverholidaysltd@gmail.com</a></span>
             </div>
-            <div style="margin-top:16px">
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center">
-                <div style="text-align:center">
-                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Accredited Member</div>
-                  <img src="uploads/accredation-01.png" alt="IATA" style="height:32px;object-fit:contain" />
+            <div class="mt-4">
+              <div class="grid grid-cols-4 gap-5 items-center">
+                <div class="text-center">
+                  <div class="text-[11px] font-bold text-white/70 uppercase mb-2.5 tracking-wider">Accredited Member</div>
+                  <img src="uploads/accredation-01.png" alt="IATA" class="h-8 object-contain" />
                 </div>
-                <div style="text-align:center">
-                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Civil Authority</div>
-                  <img src="uploads/accredation-03.png" alt="CAB" style="height:32px;object-fit:contain" />
+                <div class="text-center">
+                  <div class="text-[11px] font-bold text-white/70 uppercase mb-2.5 tracking-wider">Civil Authority</div>
+                  <img src="uploads/accredation-03.png" alt="CAB" class="h-8 object-contain" />
                 </div>
-                <div style="text-align:center">
-                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">International</div>
-                  <img src="uploads/accredation-04.png" alt="BASIS" style="height:32px;object-fit:contain" />
+                <div class="text-center">
+                  <div class="text-[11px] font-bold text-white/70 uppercase mb-2.5 tracking-wider">International</div>
+                  <img src="uploads/accredation-04.png" alt="BASIS" class="h-8 object-contain" />
                 </div>
-                <div style="text-align:center">
-                  <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:10px;letter-spacing:.05em">Best Agency 2025</div>
-                  <img src="uploads/accredation1-01.png" alt="ATAB" style="height:32px;object-fit:contain" />
+                <div class="text-center">
+                  <div class="text-[11px] font-bold text-white/70 uppercase mb-2.5 tracking-wider">Best Agency 2025</div>
+                  <img src="uploads/accredation1-01.png" alt="ATAB" class="h-8 object-contain" />
                 </div>
               </div>
             </div>
